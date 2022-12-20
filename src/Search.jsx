@@ -1,20 +1,18 @@
+import { useEffect } from 'react';
+import fetchFood from './api/fetchFoodList.js';
 import './Search.css';
 
 export default function Search({ food, setFood }) {
     function handleFetchFood(e) {
         //prevents form from refreshing the page
         e.preventDefault();
-        fetch(
-            `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9&query=${food}`
-        )
-            .then((response) => response.json())
-            .then((foodData) => {
-                console.log(foodData);
-            })
-            .catch((e) => {
-                console.error(`An error occurred: ${e}`);
-            });
+        fetchFood(food);
     }
+
+    // Loads default food list when no food item is entered
+    useEffect(() => {
+        // if (!food.trim()) fetchFood(food);
+    });
 
     return (
         <header>
