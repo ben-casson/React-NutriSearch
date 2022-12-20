@@ -4,12 +4,17 @@ import './App.css';
 import Search from './Search';
 
 function App() {
-    // const [foodList, setFoodList] = useState([]);
+    const [foodList, setFoodList] = useState([]);
     const [food, setFood] = useState('');
 
     return (
         <>
-            <Search food={food} setFood={setFood} />
+            <Search
+                food={food}
+                setFood={setFood}
+                foodList={foodList}
+                setFoodList={setFoodList}
+            />
             {/* {food && <FoodPage />}
             {foodList && <FoodListPage />} */}
         </>
