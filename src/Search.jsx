@@ -4,10 +4,8 @@ export default function Search({ food, setFood }) {
     function handleFetchFood(e) {
         //prevents form from refreshing the page
         e.preventDefault();
-        fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9?query=${search}`)
-            .then((response) => {
-                response.json();
-            })
+        fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9&query=${food}`)
+            .then((response) => response.json())
             .then((foodData) => {
                 console.log(foodData);
             })
