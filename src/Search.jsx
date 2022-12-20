@@ -16,8 +16,6 @@ export default function Search({ food, setFood }) {
             });
     }
 
-    if (!food) handleFetchFood();
-
     return (
         <header>
             <div id='search-wrapper'>
