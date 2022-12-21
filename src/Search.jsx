@@ -16,16 +16,18 @@ export default function Search({ food, setFood }) {
 
     return (
         <header>
-            <div id='search-wrapper'>
+            <div id='search-form-container'>
                 <form onSubmit={handleFetchFood}>
                     <label htmlFor='food-input'>Your Food</label>
-                    <input
-                        type='text'
-                        value={food}
-                        id='food-input'
-                        onChange={(e) => setFood(e.target.value)}
-                    />
-                    <button id='search-button'></button>
+                    <div id='search-bar-btn-container'>
+                        <input
+                            type='text'
+                            value={food}
+                            id='food-input'
+                            onChange={(e) => setFood(e.target.value)}
+                        />
+                        <button id='search-btn'></button>
+                    </div>
                 </form>
             </div>
         </header>
