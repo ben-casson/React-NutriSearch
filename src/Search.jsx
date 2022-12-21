@@ -2,16 +2,24 @@ import { useEffect } from 'react';
 import fetchFood from './api/fetchFoodList.js';
 import './Search.css';
 
-export default function Search({ food, setFood }) {
+export default function Search({
+    food,
+    setFood,
+    foodIsSelected,
+    setFoodIsSelected,
+}) {
     function handleFetchFood(e) {
         //prevents form from refreshing the page
         e.preventDefault();
         fetchFood(food);
+        if (foodIsSelected) {
+            setFoodIsSelected(!foodIsSelected);
+        }
     }
 
     // Loads default food list when no food item is entered
     useEffect(() => {
-        // if (!food.trim()) fetchFood(food);
+        if (!food.trim()) fetchFood(food);
     });
 
     return (
