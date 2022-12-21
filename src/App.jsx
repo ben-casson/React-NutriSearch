@@ -1,22 +1,29 @@
 import { useState } from 'react';
-// import reactLogo from './assets/react.svg'
 import './App.css';
 import Search from './Search';
+import FoodListPage from './FoodListPage';
+import FoodPage from './FoodPage';
 
 function App() {
-    const [foodList, setFoodList] = useState([]);
     const [food, setFood] = useState('');
+    const [foodIsSelected, setFoodIsSelected] = useState(false);
 
     return (
         <>
             <Search
                 food={food}
                 setFood={setFood}
-                foodList={foodList}
-                setFoodList={setFoodList}
+                foodIsSelected={foodIsSelected}
+                setFoodIsSelected={setFoodIsSelected}
             />
-            {/* {food && <FoodPage />}
-            {foodList && <FoodListPage />} */}
+            {foodIsSelected ? (
+                <FoodPage />
+            ) : (
+                <FoodListPage
+                    foodIsSelected={foodIsSelected}
+                    setFoodIsSelected={setFoodIsSelected}
+                />
+            )}
         </>
     );
 }
