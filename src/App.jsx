@@ -9,9 +9,13 @@ function App() {
     const [foodList, setFoodList] = useState([]);
     const [foodIsSelected, setFoodIsSelected] = useState(false);
 
-    function fetchFood(foodItem) {
+    function fetchFoodList(foodItem) {
+        let tempFoodInput = foodItem + '';
+        if (tempFoodInput.trim() === '') {
+            tempFoodInput = 'apple';
+        }
         fetch(
-            `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9&query=${foodItem}`
+            `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9&query=${tempFoodInput}`
         )
             .then((response) => response.json())
             .then((foodResults) => {
@@ -26,34 +30,37 @@ function App() {
 
     // Loads default food list on initial render
     useEffect(() => {
-        fetchFood('apple');
+        fetchFoodList('');
     }, []);
 
     return (
         <>
-            <Search
-                food={food}
-                setFood={setFood}
-                foodList={foodList}
-                setFoodList={setFoodList}
-                foodIsSelected={foodIsSelected}
-                setFoodIsSelected={setFoodIsSelected}
-                fetchFood={fetchFood}
-            />
-            {foodIsSelected ? (
-                <FoodPage />
-            ) : (
-                <>
-                    {foodList.length == 0 && <p>Loading...</p>}
-                    <FoodListPage
-                        food={food}
-                        foodIsSelected={foodIsSelected}
-                        setFoodIsSelected={setFoodIsSelected}
-                        foodList={foodList}
-                        setFoodList={setFoodList}
-                    />
-                </>
-            )}
+            <>
+                <Search
+                    food={food}
+                    setFood={setFood}
+                    foodList={foodList}
+                    setFoodList={setFoodList}
+                    foodIsSelected={foodIsSelected}
+                    setFoodIsSelected={setFoodIsSelected}
+                    fetchFoodList={fetchFoodList}
+                />
+                {foodIsSelected ? (
+                    <FoodPage />
+                ) : (
+                    <>
+                        {foodList.length == 0 && <p id='loading'>Loading...</p>}
+                        <FoodListPage
+                            food={food}
+                            foodIsSelected={foodIsSelected}
+                            setFoodIsSelected={setFoodIsSelected}
+                            foodList={foodList}
+                            setFoodList={setFoodList}
+                        />
+                    </>
+                )}
+            </>
+            {/* {foodList.length != 0 && <footer></footer>} */}
         </>
     );
 }
