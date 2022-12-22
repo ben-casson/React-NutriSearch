@@ -1,25 +1,42 @@
-form {
+header {
+    margin-top: 50px;
+}
+
+#search-form-container {
     display: flex;
     justify-content: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 514px;
+}
+
 #search-bar-and-btn-container {
     display: flex;
-    width: 514px;
     height: 44px;
 }
 
+label {
+    text-align: left;
+}
+
 input {
-    /* width: 100%; */
     flex-grow: 1;
     max-height: 44px;
-    background-color: white;
+    background-color: var(--light-blue);
     border: 1px solid var(--blue);
     color: var(--black);
     font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding-left: 10px;
 }
 input:focus {
-    border: 1px solid #053c61;
+    /* border: 1px solid #aedfff;  053c61 */
+    background-color: white;
     outline: 0;
 }
 
@@ -31,6 +48,7 @@ input:focus {
     width: 45px;
     height: 44px;
     padding: 0;
+    margin: 0;
     border: 0;
     cursor: pointer;
 }
