@@ -1,16 +1,37 @@
-import { useState } from "react";
-import { foodResults } from "./api/fetchFoodList";
+import { useEffect, useState } from 'react';
 
-export default function FoodListPage({ foodIsSelected, setFoodIsSelected }) {
-    const [foodList, setFoodList] = useState([]);
-
-    //looks at foodResults array and creats array of food objects (description, id, category)
-
+export default function FoodListPage({
+    food,
+    foodIsSelected,
+    setFoodIsSelected,
+    foodList,
+}) {
+    const [name, setName] = useState('');
 
     //temp function for testing
-    function getFood() {
+    function getFoods() {
         setFoodIsSelected(!foodIsSelected);
     }
 
-    return <button onClick={getFood}>Food List</button>;
+    const foodListItems = () => {
+        foodList.forEach((element) => {
+            <li key={element.fdcId}>{element.description}</li>;
+        });
+    };
+
+    useEffect(() => {
+        if (foodList.length > 0) setName(foodList[10].description);
+    }, [foodList]);
+
+    return (
+        <>
+            <button onClick={getFoods}>{food}</button>
+            <ul>
+                <li>{name}</li>
+                {/* {foodList.forEach((element) => {
+                    <li key={element.fdcId}>{element.description}</li>;
+                })} */}
+            </ul>
+        </>
+    );
 }
