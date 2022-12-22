@@ -20,13 +20,20 @@ export default function FoodListPage({
     }, [foodList]);
 
     return (
-        <>
-            <button onClick={getFoods}>{food}</button>
-            <ul>
-                {arr.map((element) => (
-                    <li key={element.fdcId}>{element.description}</li>
-                ))}
-            </ul>
-        </>
+        <main>
+            {/* <button onClick={getFoods}>{food}</button> */}
+
+            {arr.map((element, i) => (
+                // <p key={element.fdcId}>{element.description}</p>
+                <div className='food-row' key={i}>
+                    <div className='description-wrapper'>
+                        <button key={element.fdcId}>{element.description}</button>
+                    </div>
+                    <div className='food-category-wrapper'>
+                        <p>{element.foodCategory}</p>
+                    </div>
+                </div>
+            ))}
+        </main>
     );
 }
