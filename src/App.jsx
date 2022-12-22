@@ -16,7 +16,7 @@ function App() {
             .then((response) => response.json())
             .then((foodResults) => {
                 console.log(foodResults);
-                setFoodList([...foodResults.foods])
+                setFoodList([...foodResults.foods]);
                 console.log(foodList);
             })
             .catch((error) => {
@@ -26,7 +26,7 @@ function App() {
 
     // Loads default food list on initial render
     useEffect(() => {
-        fetchFood(food);
+        fetchFood('apple');
     }, []);
 
     return (
@@ -43,13 +43,16 @@ function App() {
             {foodIsSelected ? (
                 <FoodPage />
             ) : (
-                <FoodListPage
-                    food={food}
-                    foodIsSelected={foodIsSelected}
-                    setFoodIsSelected={setFoodIsSelected}
-                    foodList={foodList}
-                    setFoodList={setFoodList}
-                />
+                <>
+                    {foodList.length == 0 && <p>Loading...</p>}
+                    <FoodListPage
+                        food={food}
+                        foodIsSelected={foodIsSelected}
+                        setFoodIsSelected={setFoodIsSelected}
+                        foodList={foodList}
+                        setFoodList={setFoodList}
+                    />
+                </>
             )}
         </>
     );
