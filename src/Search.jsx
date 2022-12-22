@@ -10,10 +10,8 @@ export default function Search({
     setFoodList,
     foodIsSelected,
     setFoodIsSelected,
-    fetchFood
+    fetchFood,
 }) {
-    
-
     function handleFetchFood(e) {
         //prevents form from refreshing the page
         e.preventDefault();
@@ -23,14 +21,12 @@ export default function Search({
         }
     }
 
-    
-
     return (
         <header>
             <div id='search-form-container'>
                 <form onSubmit={handleFetchFood}>
                     <label htmlFor='food-input'>Your Food</label>
-                    <div id='search-bar-btn-container'>
+                    <div id='search-bar-and-btn-container'>
                         <input
                             type='text'
                             value={food}
