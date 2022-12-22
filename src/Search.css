@@ -1,4 +1,9 @@
-#search-bar-btn-container {
+form {
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar-and-btn-container {
     display: flex;
     width: 514px;
     height: 44px;
