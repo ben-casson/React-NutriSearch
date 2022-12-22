@@ -1,61 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 :root {
-  font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  /* line-height: 24px; */
-  font-weight: 400;
+    font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    /* line-height: 24px; */
+    font-weight: 400;
 
-  /* colors */
-  --blue: #0071BC;
-  --black: #131313;
-  --off-white: #f7f7f7;
+    /* colors */
+    --blue: #0071bc;
+    --black: #131313;
+    --off-white: #f7f7f7;
 
-  color-scheme: light dark;
-  color: var(--black); /* rgba(255, 255, 255, 0.87) */
-  background-color: var(--off-white);  /* #242424 */
+    color-scheme: light dark;
+    color: var(--black); /* rgba(255, 255, 255, 0.87) */
+    background-color: var(--off-white); /* #242424 */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
- 
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 #root {
-  width: 100%;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  text-align: center;
+    width: 100%;
+    /* margin: 0 auto; */
+    /* padding: 2rem; */
+    text-align: center;
 }
 
 @media (min-width: 1100px) {
-  #root {
-    
-    max-width: 1100px;
-  }
+    #root {
+        max-width: 1100px;
+    }
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+    color: #535bf2;
 }
-
 
 /* h1 {
   font-size: 3.2em;
