@@ -6,31 +6,26 @@ export default function FoodListPage({
     setFoodIsSelected,
     foodList,
 }) {
-    const [name, setName] = useState('');
+    // const [name, setName] = useState('');
+    const [arr, setArr] = useState([]);
 
     //temp function for testing
     function getFoods() {
         setFoodIsSelected(!foodIsSelected);
     }
 
-    const foodListItems = () => {
-        foodList.forEach((element) => {
-            <li key={element.fdcId}>{element.description}</li>;
-        });
-    };
-
     useEffect(() => {
-        if (foodList.length > 0) setName(foodList[10].description);
+        // if (foodList.length > 0) setName(foodList[10].description);
+        if (foodList.length > 0) setArr([...foodList]);
     }, [foodList]);
 
     return (
         <>
             <button onClick={getFoods}>{food}</button>
             <ul>
-                <li>{name}</li>
-                {/* {foodList.forEach((element) => {
-                    <li key={element.fdcId}>{element.description}</li>;
-                })} */}
+                {arr.map((element) => (
+                    <li key={element.fdcId}>{element.description}</li>
+                ))}
             </ul>
         </>
     );
