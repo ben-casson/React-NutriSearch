@@ -1,6 +1,11 @@
 header {
     margin-top: 50px;
 }
+@media (max-width: 1100px) {
+    header {
+        padding: 0 10px;
+    }
+}
 
 #search-form-container {
     display: flex;
