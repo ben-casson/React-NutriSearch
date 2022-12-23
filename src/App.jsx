@@ -8,6 +8,7 @@ function App() {
     const [food, setFood] = useState('');
     const [foodList, setFoodList] = useState([]);
     const [foodIsSelected, setFoodIsSelected] = useState(false);
+    const [selectedFoodDetails, setSelectedFoodDetails] = useState({});
 
     function fetchFoodList(foodItem) {
         let tempFoodInput = foodItem + '';
@@ -19,9 +20,24 @@ function App() {
         )
             .then((response) => response.json())
             .then((foodResults) => {
-                console.log(foodResults);
+                // console.log(foodResults);
                 setFoodList([...foodResults.foods]);
-                console.log(foodList);
+                // console.log(foodList);
+            })
+            .catch((error) => {
+                console.error(`An error occurred: ${error}`);
+            });
+    }
+
+    function fetchFood(id) {
+        fetch(
+            `https://api.nal.usda.gov/fdc/v1/food/${id}?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9`
+        )
+            .then((response) => response.json())
+            .then((foodResults) => {
+                console.log(foodResults);
+                setSelectedFoodDetails(foodResults);
+                console.log(selectedFoodDetails);
             })
             .catch((error) => {
                 console.error(`An error occurred: ${error}`);
@@ -41,12 +57,17 @@ function App() {
                     setFood={setFood}
                     foodList={foodList}
                     setFoodList={setFoodList}
+                    fetchFoodList={fetchFoodList}
                     foodIsSelected={foodIsSelected}
                     setFoodIsSelected={setFoodIsSelected}
-                    fetchFoodList={fetchFoodList}
+                    setSelectedFoodDetails={setSelectedFoodDetails}
                 />
                 {foodIsSelected ? (
-                    <FoodPage />
+                    <FoodPage
+                        foodIsSelected={foodIsSelected}
+                        selectedFoodDetails={selectedFoodDetails}
+                        setSelectedFoodDetails={setSelectedFoodDetails}
+                    />
                 ) : (
                     <>
                         {foodList.length == 0 && <p id='loading'>Loading...</p>}
@@ -56,6 +77,7 @@ function App() {
                             setFoodIsSelected={setFoodIsSelected}
                             foodList={foodList}
                             setFoodList={setFoodList}
+                            fetchFood={fetchFood}
                         />
                     </>
                 )}
