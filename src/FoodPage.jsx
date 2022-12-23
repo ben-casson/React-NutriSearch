@@ -8,7 +8,7 @@ export default function FoodPage({
 }) {
     const [foodDetails, setFoodDetails] = useState({});
 
-    const handleChange = (e) => {
+    const handleNumberChange = (e) => {
         if (e.target.value.length > 4) {
             e.target.value = Math.floor(e.target.value / 10);
         }
@@ -24,7 +24,6 @@ export default function FoodPage({
             {Object.keys(foodDetails).length === 0 ? (
                 <p>Loading...</p>
             ) : (
-                // <p>{foodDetails.description}</p>
                 <main>
                     <h1>{foodDetails.description}</h1>
                     <section id='food-info-section'>
@@ -77,7 +76,7 @@ export default function FoodPage({
                             defaultValue={foodDetails.servingSize || 100}
                             min={0}
                             max={9999}
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleNumberChange(e)}
                         />
                         <p>{foodDetails.servingSizeUnit || ''}</p>
                     </div>
