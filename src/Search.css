@@ -39,12 +39,12 @@ form {
     font-size: 16px;
     padding-left: 10px;
 }
-input:focus {
+#food-input:focus {
     /* border: 1px solid #aedfff;  053c61 */
     background-color: white;
     outline: 0;
 }
-input:hover {
+#food-input:hover {
     background-color: white;
 }
 
