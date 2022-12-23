@@ -20,11 +20,11 @@ form {
     height: 44px;
 }
 
-label {
+#food-input-label {
     text-align: left;
 }
 
-input {
+#food-input {
     flex-grow: 1;
     max-height: 44px;
     background-color: var(--light-blue);
@@ -38,6 +38,9 @@ input:focus {
     /* border: 1px solid #aedfff;  053c61 */
     background-color: white;
     outline: 0;
+}
+input:hover {
+    background-color: white;
 }
 
 #search-btn {
