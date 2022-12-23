@@ -29,10 +29,13 @@ export default function FoodPage({
                     <section id='food-info-section'>
                         <div id='food-info-container-1'>
                             <div id='food-category-container'>
-                                <p id='food-category-title'>
-                                    <b>Food Category:</b>
+                                <p
+                                    id='food-category-title'
+                                    className='food-info-title'
+                                >
+                                    Food Category:
                                 </p>
-                                <p id='food-category'>
+                                <p id='food-category' className='food-info'>
                                     {foodDetails.brandedFoodCategory ||
                                         (function (category) {
                                             if (category) {
@@ -46,34 +49,43 @@ export default function FoodPage({
                                 </p>
                             </div>
                             <div id='food-brand-owner-container'>
-                                <p id='food-brand-owner-title'>
-                                    <b>Brand Owner:</b>
+                                <p
+                                    id='food-brand-owner-title'
+                                    className='food-info-title'
+                                >
+                                    Brand Owner:
                                 </p>
-                                <p id='food-brand-owner'>
+                                <p id='food-brand-owner' className='food-info'>
                                     {foodDetails.brandOwner || 'unknown'}
                                 </p>
                             </div>
                             <div id='food-serving-size-container'>
-                                <p id='food-serving-size'>
-                                    <b>Serving Size:</b>
+                                <p
+                                    id='food-serving-size-title'
+                                    className='food-info-title'
+                                >
+                                    Serving Size:
                                 </p>
-                                <p id='food-serving-size'>
+                                <p id='food-serving-size' className='food-info'>
                                     {foodDetails.servingSize || 'unknown'}
                                     {foodDetails.servingSizeUnit || ''}
                                 </p>
                             </div>
                         </div>
                         <div id='food-info-container-2'>
-                            <p id='food-ingredients-title'>
-                                <b>Ingredients:</b>
+                            <p
+                                id='food-ingredients-title'
+                                className='food-info-title'
+                            >
+                                Ingredients:
                             </p>
-                            <p id='food-ingredients'>
+                            <p id='food-ingredients' className='food-info'>
                                 {foodDetails.ingredients || 'unknown'}
                             </p>
                         </div>
                     </section>
                     <div id='portion-container'>
-                        <label htmlFor='portion'>
+                        <label htmlFor='portion' id='portion-label'>
                             <b>Portion:</b>
                         </label>
                         <input
