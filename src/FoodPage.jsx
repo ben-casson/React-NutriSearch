@@ -34,8 +34,13 @@ export default function FoodPage({
                                 </p>
                                 <p id='food-category'>
                                     {foodDetails.brandedFoodCategory ||
-                                        foodDetails.wweiaFoodCategory
-                                            .wweiaFoodCategoryDescription ||
+                                        (function (category) {
+                                            if (category) {
+                                                return foodDetails
+                                                    .wweiaFoodCategory
+                                                    .wweiaFoodCategoryDescription;
+                                            }
+                                        })(foodDetails.wweiaFoodCategory) ||
                                         foodDetails.foodCategory.description ||
                                         'unknown'}
                                 </p>
