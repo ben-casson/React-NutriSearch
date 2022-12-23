@@ -67,7 +67,32 @@ export default function FoodPage({
                                     Serving Size:
                                 </p>
                                 <p id='food-serving-size' className='food-info'>
-                                    {foodDetails.servingSize || 'unknown'}
+                                    {foodDetails.servingSize ||
+                                        (function (amount) {
+                                            if (amount) {
+                                                return (
+                                                    amount +
+                                                    ' ' +
+                                                    foodDetails.foodPortions[0]
+                                                        .modifier +
+                                                    ' (' +
+                                                    foodDetails.foodPortions[0]
+                                                        .gramWeight +
+                                                    'g)'
+                                                );
+                                            }
+                                        })(
+                                            foodDetails.foodPortions[0].amount
+                                        ) ||
+                                        // foodDetails.foodPortions[0].amount +
+                                        //     ' ' +
+                                        //     foodDetails.foodPortions[0]
+                                        //         .modifier +
+                                        //     ' (' +
+                                        //     foodDetails.foodPortions[0]
+                                        //         .gramWeight +
+                                        //     ')'
+                                        'unknown'}
                                     {foodDetails.servingSizeUnit || ''}
                                 </p>
                             </div>
@@ -97,8 +122,18 @@ export default function FoodPage({
                             max={9999}
                             onChange={(e) => handleNumberChange(e)}
                         />
-                        <p>{foodDetails.servingSizeUnit || ''}</p>
+                        <p>{foodDetails.servingSizeUnit || 'g'}</p>
                     </div>
+                    <section id='food-nutrients-table-section'>
+                        <div id='food-nutrients-table-title-container'>
+                            <p id='food-nutrients-title-name'>Name</p>
+                            <p id='food-nutrients-title-amount'>Amount</p>
+                            <p id='food-nutrients-title-daily-value'>% Daily Value</p>
+                        </div>
+                        <div id='food-nutrients-table-content-container'>
+
+                        </div>
+                    </section>
                 </main>
             )}
         </>
