@@ -16,11 +16,16 @@ export default function FoodListPage({
         if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
-    const row = (element, i) => {
+    const createFoodRow = (element, i) => {
         return (
             <>
                 <div className='description-wrapper'>
-                    <button key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>{element.description}</button>
+                    <button
+                        key={element.fdcId}
+                        onClick={() => loadFoodPage(element.fdcId)}
+                    >
+                        {element.description}
+                    </button>
                 </div>
                 <div className='food-category-wrapper'>
                     <p>{element.foodCategory}</p>
@@ -54,11 +59,11 @@ export default function FoodListPage({
                         // <p key={element.fdcId}>{element.description}</p>
                         i % 2 == 0 ? (
                             <div className='food-row dark-background' key={i}>
-                                {row(element, i)}
+                                {createFoodRow(element, i)}
                             </div>
                         ) : (
                             <div className='food-row' key={i}>
-                                {row(element, i)}
+                                {createFoodRow(element, i)}
                             </div>
                         )
                     )}
