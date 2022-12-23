@@ -1,6 +1,7 @@
 main {
     margin: 50px 0;
     /* border-bottom: 1px solid #115F94; */
+    font-size: 18px;
 }
 
 #food-list-header {
@@ -32,7 +33,7 @@ main {
     border-top: 1px solid #115F94;
 }
 
-.dark-background {
+.food-row.dark-background {
     background-color: #EAEAEA;
 }
 
@@ -63,7 +64,7 @@ button {
     padding: 0;
     margin-left: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
     color: var(--blue);
     text-decoration: underline;
