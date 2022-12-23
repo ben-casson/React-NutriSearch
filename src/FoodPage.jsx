@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './FoodPage.css';
+import NutrientRow from './NutrientRow';
 
 export default function FoodPage({
     foodIsSelected,
@@ -84,14 +85,6 @@ export default function FoodPage({
                                         })(
                                             foodDetails.foodPortions[0].amount
                                         ) ||
-                                        // foodDetails.foodPortions[0].amount +
-                                        //     ' ' +
-                                        //     foodDetails.foodPortions[0]
-                                        //         .modifier +
-                                        //     ' (' +
-                                        //     foodDetails.foodPortions[0]
-                                        //         .gramWeight +
-                                        //     ')'
                                         'unknown'}
                                     {foodDetails.servingSizeUnit || ''}
                                 </p>
@@ -117,7 +110,7 @@ export default function FoodPage({
                             type='number'
                             name='portion'
                             id='portion-input'
-                            defaultValue={foodDetails.servingSize || 100}
+                            defaultValue={100} //foodDetails.servingSize
                             min={0}
                             max={9999}
                             onChange={(e) => handleNumberChange(e)}
@@ -128,10 +121,13 @@ export default function FoodPage({
                         <div id='food-nutrients-table-title-container'>
                             <p id='food-nutrients-title-name'>Name</p>
                             <p id='food-nutrients-title-amount'>Amount</p>
-                            <p id='food-nutrients-title-daily-value'>% Daily Value</p>
+                            <p id='food-nutrients-title-daily-value'>
+                                % Daily Value
+                            </p>
                         </div>
                         <div id='food-nutrients-table-content-container'>
-
+                            {/* create nutrient rows */}
+                            {(Object.keys(foodDetails).length != 0) && (<NutrientRow nutrientsArray={foodDetails.foodNutrients} />)}
                         </div>
                     </section>
                 </main>
