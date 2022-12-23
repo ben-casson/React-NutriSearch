@@ -71,14 +71,14 @@ function App() {
                 ) : (
                     <>
                         {foodList.length == 0 && <p id='loading'>Loading...</p>}
-                        <FoodListPage
+                        {foodList.length != 0 && <FoodListPage
                             food={food}
                             foodIsSelected={foodIsSelected}
                             setFoodIsSelected={setFoodIsSelected}
                             foodList={foodList}
                             setFoodList={setFoodList}
                             fetchFood={fetchFood}
-                        />
+                        />}
                     </>
                 )}
             </>
