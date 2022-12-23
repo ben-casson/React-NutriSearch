@@ -34,6 +34,8 @@ export default function FoodPage({
                                 </p>
                                 <p id='food-category'>
                                     {foodDetails.brandedFoodCategory ||
+                                        foodDetails.wweiaFoodCategory
+                                            .wweiaFoodCategoryDescription ||
                                         foodDetails.foodCategory.description ||
                                         'unknown'}
                                 </p>
