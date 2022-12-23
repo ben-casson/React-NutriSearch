@@ -1,0 +1,7 @@
+.nutrient-row {
+    background-color: white;
+}
+
+.nutrient-row.dark-background {
+    background-color: #EBEEF8;
+}
