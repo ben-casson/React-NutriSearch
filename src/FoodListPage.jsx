@@ -6,20 +6,21 @@ export default function FoodListPage({
     foodIsSelected,
     setFoodIsSelected,
     foodList,
+    fetchFood,
 }) {
-    // const [name, setName] = useState('');
     const [arr, setArr] = useState([]);
 
-    //temp function for testing
-    function getFoods() {
-        setFoodIsSelected(!foodIsSelected);
+    //
+    function loadFoodPage(id) {
+        fetchFood(id);
+        if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
     const row = (element, i) => {
         return (
             <>
                 <div className='description-wrapper'>
-                    <button key={element.fdcId}>{element.description}</button>
+                    <button key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>{element.description}</button>
                 </div>
                 <div className='food-category-wrapper'>
                     <p>{element.foodCategory}</p>
@@ -29,7 +30,6 @@ export default function FoodListPage({
     };
 
     useEffect(() => {
-        // if (foodList.length > 0) setName(foodList[10].description);
         if (foodList.length > 0) setArr([...foodList]);
     }, [foodList]);
 
