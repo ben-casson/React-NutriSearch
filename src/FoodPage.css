@@ -72,3 +72,7 @@ h1 {
     text-align: end;
     width: 30px;
 }
+
+#food-nutrients-table-content-container {
+    border: 2px solid #E6E8F0;
+}
