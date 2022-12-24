@@ -47,6 +47,12 @@ form {
 #food-input:hover {
     background-color: white;
 }
+@media (max-width: 500px) {
+    #food-input {
+        font-size: 14px;
+    }
+}
+
 
 #search-btn {
     background-image: url('../src/assets/search.png');
