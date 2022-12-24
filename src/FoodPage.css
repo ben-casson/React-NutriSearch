@@ -39,6 +39,7 @@ h1 {
 }
 
 #food-category-container,
+#food-brand-name-container,
 #food-brand-owner-container,
 #food-serving-size-container,
 #food-info-container-2 {
@@ -48,8 +49,9 @@ h1 {
 }
 
 #food-category-container,
+#food-brand-name-container,
 #food-brand-owner-container {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .food-info-title {
