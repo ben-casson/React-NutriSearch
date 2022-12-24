@@ -27,6 +27,15 @@ export default function FoodListPage({
                         {element.description}
                     </button>
                 </div>
+                <div className='food-brand-wrapper'>
+                    <p>
+                        {element.brandName ||
+                            element.foodClass || 'unknown'}
+                    </p>
+                </div>
+                <div className='food-brand-owner-wrapper'>
+                    <p>{element.brandOwner || 'unknown'}</p>
+                </div>
                 <div className='food-category-wrapper'>
                     <p>{element.foodCategory}</p>
                 </div>

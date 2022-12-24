@@ -49,6 +49,19 @@ export default function FoodPage({
                                         'unknown'}
                                 </p>
                             </div>
+                            <div id='food-brand-name-container'>
+                                <p
+                                    id='food-brand-name-title'
+                                    className='food-info-title'
+                                >
+                                    Brand Name:
+                                </p>
+                                <p id='food-brand-name' className='food-info'>
+                                    {foodDetails.brandName ||
+                                        (foodDetails.foodClass == 'Branded' &&
+                                            'unknown')}
+                                </p>
+                            </div>
                             <div id='food-brand-owner-container'>
                                 <p
                                     id='food-brand-owner-title'
@@ -57,7 +70,9 @@ export default function FoodPage({
                                     Brand Owner:
                                 </p>
                                 <p id='food-brand-owner' className='food-info'>
-                                    {foodDetails.brandOwner || 'unknown'}
+                                    {foodDetails.brandOwner ||
+                                        (foodDetails.foodClass == 'Branded' &&
+                                            'unknown')}
                                 </p>
                             </div>
                             <div id='food-serving-size-container'>
@@ -69,22 +84,56 @@ export default function FoodPage({
                                 </p>
                                 <p id='food-serving-size' className='food-info'>
                                     {foodDetails.servingSize ||
-                                        (function (amount) {
-                                            if (amount) {
-                                                return (
-                                                    amount +
-                                                    ' ' +
+                                        (foodDetails.foodPortions &&
+                                            (function (amount) {
+                                                if (amount) {
+                                                    return (
+                                                        amount +
+                                                        ' ' +
+                                                        foodDetails
+                                                            .foodPortions[0]
+                                                            .modifier +
+                                                        ' (' +
+                                                        foodDetails
+                                                            .foodPortions[0]
+                                                            .gramWeight +
+                                                        'g)'
+                                                    );
+                                                } else {
                                                     foodDetails.foodPortions[0]
-                                                        .modifier +
-                                                    ' (' +
-                                                    foodDetails.foodPortions[0]
-                                                        .gramWeight +
-                                                    'g)'
-                                                );
-                                            }
-                                        })(
-                                            foodDetails.foodPortions[0].amount
-                                        ) ||
+                                                        .portionDescription;
+                                                }
+                                            })(
+                                                foodDetails.foodPortions[0]
+                                                    .amount
+                                            )) ||
+                                        (foodDetails.foodPortions &&
+                                            foodDetails.foodPortions.length !=
+                                                0 &&
+                                            (function (portions) {
+                                                if (portions[0].amount) {
+                                                    return (
+                                                        portions[0].amount +
+                                                        ' ' +
+                                                        portions[0].modifier +
+                                                        ' (' +
+                                                        portions[0].gramWeight +
+                                                        'g)'
+                                                    );
+                                                } else {
+                                                    return portions[0]
+                                                        .portionDescription;
+                                                }
+                                            })(foodDetails.foodPortions)) ||
+                                        // (foodDetails.foodPortions &&
+                                        //     foodDetails.foodPortions[0].amount +
+                                        //         ' ' +
+                                        //         foodDetails.foodPortions[0]
+                                        //             .modifier +
+                                        //         ' (' +
+                                        //         foodDetails.foodPortions[0]
+                                        //             .gramWeight +
+                                        //         'g)') ||
                                         'unknown'}
                                     {foodDetails.servingSizeUnit || ''}
                                 </p>
@@ -98,7 +147,12 @@ export default function FoodPage({
                                 Ingredients:
                             </p>
                             <p id='food-ingredients' className='food-info'>
-                                {foodDetails.ingredients || 'unknown'}
+                                {foodDetails.ingredients ||
+                                    (foodDetails.inputFoods &&
+                                        foodDetails.inputFoods.length != 0 &&
+                                        foodDetails.inputFoods[0]
+                                            .ingredientDescription) ||
+                                    'unknown'}
                             </p>
                         </div>
                     </section>
@@ -127,7 +181,11 @@ export default function FoodPage({
                         </div>
                         <div id='food-nutrients-table-content-container'>
                             {/* create nutrient rows */}
-                            {(Object.keys(foodDetails).length != 0) && (<NutrientRow nutrientsArray={foodDetails.foodNutrients} />)}
+                            {Object.keys(foodDetails).length != 0 && (
+                                <NutrientRow
+                                    nutrientsArray={foodDetails.foodNutrients}
+                                />
+                            )}
                         </div>
                     </section>
                 </main>
