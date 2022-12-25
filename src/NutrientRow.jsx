@@ -6,7 +6,12 @@ export default function NutrientRow({ nutrientsArray }) {
     const [nutrientsList, setNutrientsList] = useState([]);
 
     const createNutrientRow = (nutrientType) => {
-        return <p key={nutrientType.nutrient.name}>{nutrientType.nutrient.name}</p>;
+        return (
+            <>
+                <p>{nutrientType.nutrient.name}</p>
+                <p>{nutrientType.amount + "" + nutrientType.nutrient.unitName}</p>
+            </>
+        );
     };
 
     useEffect(() => {
@@ -21,11 +26,17 @@ export default function NutrientRow({ nutrientsArray }) {
                 <>
                     {nutrientsList.map((nutrientType, i) =>
                         i % 2 == 0 ? (
-                            <div className='nutrient-row'>
+                            <div
+                                key={Math.random() * 20000}
+                                className='nutrient-row'
+                            >
                                 {createNutrientRow(nutrientType)}
                             </div>
                         ) : (
-                            <div className='nutrient-row dark-background'>
+                            <div
+                                key={Math.random() * 20000}
+                                className='nutrient-row dark-background'
+                            >
                                 {createNutrientRow(nutrientType)}
                             </div>
                         )
