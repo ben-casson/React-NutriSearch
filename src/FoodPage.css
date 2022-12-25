@@ -8,11 +8,12 @@ h1 {
     text-align: left;
     color: var(--blue);
     font-size: 34px;
+    margin-bottom: 15px;
 }
 
 #food-info-section {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 900px) {
@@ -75,6 +76,32 @@ h1 {
     width: 30px;
 }
 
+#food-nutrients-table-section {
+    margin: 0 auto;
+    /* max-width: 900px; */
+}
+
 #food-nutrients-table-content-container {
-    border: 2px solid #E6E8F0;
+    border: 3px solid #E6E8F0;
+}
+
+#food-nutrients-table-title-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+#food-nutrients-title-name {
+    text-align: left;
+    flex-basis: calc(66.66% - 15px);
+    margin-left: 15px;
+}
+
+#food-nutrients-title-amount,
+#food-nutrients-title-daily-value {
+    text-align: left;
+    flex-basis: 16.66%;
 }
