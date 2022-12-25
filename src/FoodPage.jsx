@@ -46,7 +46,7 @@ export default function FoodPage({
                                             }
                                         })(foodDetails.wweiaFoodCategory) ||
                                         foodDetails.foodCategory.description ||
-                                        'unknown'}
+                                        <span className='unknown'>unknown</span>}
                                 </p>
                             </div>
                             <div id='food-brand-name-container'>
@@ -57,7 +57,7 @@ export default function FoodPage({
                                     Brand Name:
                                 </p>
                                 <p id='food-brand-name' className='food-info'>
-                                    {foodDetails.brandName || 'unknown'}
+                                    {foodDetails.brandName || <span className='unknown'>unknown</span>}
                                 </p>
                             </div>
                             <div id='food-brand-owner-container'>
@@ -68,7 +68,7 @@ export default function FoodPage({
                                     Brand Owner:
                                 </p>
                                 <p id='food-brand-owner' className='food-info'>
-                                    {foodDetails.brandOwner || 'unknown'}
+                                    {foodDetails.brandOwner || <span className='unknown'>unknown</span>}
                                 </p>
                             </div>
                             <div id='food-serving-size-container'>
@@ -121,16 +121,7 @@ export default function FoodPage({
                                                         .portionDescription;
                                                 }
                                             })(foodDetails.foodPortions)) ||
-                                        // (foodDetails.foodPortions &&
-                                        //     foodDetails.foodPortions[0].amount +
-                                        //         ' ' +
-                                        //         foodDetails.foodPortions[0]
-                                        //             .modifier +
-                                        //         ' (' +
-                                        //         foodDetails.foodPortions[0]
-                                        //             .gramWeight +
-                                        //         'g)') ||
-                                        'unknown'}
+                                            <span className='unknown'>unknown</span>}
                                     {foodDetails.servingSizeUnit || ''}
                                 </p>
                             </div>
@@ -148,7 +139,7 @@ export default function FoodPage({
                                         foodDetails.inputFoods.length != 0 &&
                                         foodDetails.inputFoods[0]
                                             .ingredientDescription) ||
-                                    'unknown'}
+                                            <span className='unknown'>'unknown'</span>}
                             </p>
                         </div>
                     </section>
@@ -176,7 +167,6 @@ export default function FoodPage({
                             </p>
                         </div>
                         <div id='food-nutrients-table-content-container'>
-                            {/* create nutrient rows */}
                             {Object.keys(foodDetails).length != 0 && (
                                 <NutrientRow
                                     nutrientsArray={foodDetails.foodNutrients}
