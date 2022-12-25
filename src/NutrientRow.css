@@ -1,5 +1,6 @@
 .nutrient-row {
     background-color: white;
+    padding: 12px 0;
 }
 
 .nutrient-row.dark-background {
