@@ -1,6 +1,7 @@
 .nutrient-row {
+    display: flex;
     background-color: white;
-    padding: 12px 0;
+    padding: 10px 0;
 }
 
 .nutrient-row.dark-background {
