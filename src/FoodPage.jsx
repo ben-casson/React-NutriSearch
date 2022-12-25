@@ -57,9 +57,7 @@ export default function FoodPage({
                                     Brand Name:
                                 </p>
                                 <p id='food-brand-name' className='food-info'>
-                                    {foodDetails.brandName ||
-                                        (foodDetails.foodClass == 'Branded' &&
-                                            'unknown')}
+                                    {foodDetails.brandName || 'unknown'}
                                 </p>
                             </div>
                             <div id='food-brand-owner-container'>
@@ -70,9 +68,7 @@ export default function FoodPage({
                                     Brand Owner:
                                 </p>
                                 <p id='food-brand-owner' className='food-info'>
-                                    {foodDetails.brandOwner ||
-                                        (foodDetails.foodClass == 'Branded' &&
-                                            'unknown')}
+                                    {foodDetails.brandOwner || 'unknown'}
                                 </p>
                             </div>
                             <div id='food-serving-size-container'>
