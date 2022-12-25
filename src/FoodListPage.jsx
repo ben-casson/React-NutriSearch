@@ -30,11 +30,11 @@ export default function FoodListPage({
                 <div className='food-brand-wrapper'>
                     <p>
                         {element.brandName ||
-                            element.foodClass || 'unknown'}
+                            element.foodClass || '-'}
                     </p>
                 </div>
                 <div className='food-brand-owner-wrapper'>
-                    <p>{element.brandOwner || 'unknown'}</p>
+                    <p>{element.brandOwner || '-'}</p>
                 </div>
                 <div className='food-category-wrapper'>
                     <p>{element.foodCategory}</p>
@@ -56,6 +56,16 @@ export default function FoodListPage({
                         <div id='food-list-description-header'>
                             <p id='description-title'>
                                 <b>Description</b>
+                            </p>
+                        </div>
+                        <div id='food-list-brand-header'>
+                            <p>
+                                <b>Brand</b>
+                            </p>
+                        </div>
+                        <div id='food-list-brand-owner-header'>
+                            <p>
+                                <b>Brand Owner</b>
                             </p>
                         </div>
                         <div id='food-list-category-header'>
