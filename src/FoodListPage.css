@@ -3,22 +3,26 @@ main {
     /* border-bottom: 1px solid #115F94; */
     font-size: 16px;
 }
+
+#food-list-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+    font-size: 16px;
+}
+
 @media (max-width: 500px) {
-    main {
+    main,
+    #food-list-header {
         font-size: 14px;
     }
 }
 @media (min-width: 1100px) {
-    main {
+    main,
+    #food-list-header {
         font-size: 18px;
     }
-}
-
-#food-list-header {
-    display: flex;
-    margin-bottom: 10px;
-    gap: 5px;
-    font-size: 18px;
 }
 
 #food-list-description-header {
