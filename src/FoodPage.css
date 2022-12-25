@@ -7,6 +7,7 @@
 h1 {
     text-align: left;
     color: var(--blue);
+    /* color: #1A936F; */
     font-size: 34px;
     margin-bottom: 15px;
 }
@@ -68,6 +69,7 @@ h1 {
 #portion-label {
     font-size: 24px;
     color: var(--blue);
+    /* color: #1A936F; */
 }
 
 #portion-input {
@@ -82,7 +84,7 @@ h1 {
 }
 
 #food-nutrients-table-content-container {
-    border: 3px solid #E6E8F0;
+    border: 2px solid #E6E8F0;
 }
 
 #food-nutrients-table-title-container {
@@ -104,4 +106,9 @@ h1 {
 #food-nutrients-title-daily-value {
     text-align: left;
     flex-basis: 16.66%;
+}
+
+.unknown {
+    font-size: smaller;
+    color: rgb(104, 104, 104);
 }
