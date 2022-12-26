@@ -84,7 +84,6 @@ function App() {
                     </>
                 )}
             </>
-            {/* {foodList.length != 0 && <footer></footer>} */}
         </>
     );
 }
