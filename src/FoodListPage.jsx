@@ -10,7 +10,6 @@ export default function FoodListPage({
 }) {
     const [arr, setArr] = useState([]);
 
-    //
     function loadFoodPage(id) {
         fetchFood(id);
         if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
@@ -28,10 +27,7 @@ export default function FoodListPage({
                     </button>
                 </div>
                 <div className='food-brand-wrapper'>
-                    <p>
-                        {element.brandName ||
-                            element.foodClass || '-'}
-                    </p>
+                    <p>{element.brandName || element.foodClass || '-'}</p>
                 </div>
                 <div className='food-brand-owner-wrapper'>
                     <p>{element.brandOwner || '-'}</p>
@@ -49,7 +45,6 @@ export default function FoodListPage({
 
     return (
         <main>
-            {/* <button onClick={getFoods}>{food}</button> */}
             {arr.length != 0 && (
                 <>
                     <div id='food-list-header'>
@@ -75,7 +70,6 @@ export default function FoodListPage({
                         </div>
                     </div>
                     {arr.map((element, i) =>
-                        // <p key={element.fdcId}>{element.description}</p>
                         i % 2 == 0 ? (
                             <div className='food-row dark-background' key={i}>
                                 {createFoodRow(element, i)}
