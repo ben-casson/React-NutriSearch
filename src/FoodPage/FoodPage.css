@@ -1,0 +1,127 @@
+@media (max-width: 1100px) {
+    main {
+        padding: 0 10px;
+    }
+}
+
+h1 {
+    text-align: left;
+    color: var(--blue);
+    /* color: #1A936F; */
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+#food-info-section {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+    #food-info-section {
+        flex-direction: column;
+    }
+
+    #food-serving-size-container {
+        margin-bottom: 10px;
+    }
+}
+
+#food-info-container-1 {
+    flex-basis: 50%;
+}
+
+#food-info-container-2 {
+    flex-basis: 50%;
+}
+
+.food-info {
+    text-align: left;
+    overflow-wrap: normal;
+}
+
+#food-category-container,
+#food-brand-name-container,
+#food-brand-owner-container,
+#food-serving-size-container,
+#food-info-container-2 {
+    display: flex;
+    gap: 5px;
+    text-align: left;
+}
+
+#food-category-container,
+#food-brand-name-container,
+#food-brand-owner-container {
+    margin-bottom: 5px;
+}
+
+.food-info-title {
+    width: fit-content;
+    font-weight: bold;
+}
+
+#portion-container {
+    display: flex;
+    justify-content: left;
+}
+
+#portion-label {
+    font-size: 24px;
+    color: var(--blue);
+    /* color: #1A936F; */
+}
+
+#portion-input {
+    appearance: textfield;
+    text-align: end;
+    width: 30px;
+}
+
+#food-nutrients-table-section {
+    margin: 0 auto;
+    /* max-width: 900px; */
+}
+
+#food-nutrients-table-content-container {
+    border: 2px solid #E6E8F0;
+}
+
+#food-nutrients-table-title-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media (max-width: 500px) {
+    #food-nutrients-table-title-container  {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1100px) {
+    #food-nutrients-table-title-container  {
+        font-size: 18px;
+    }
+}
+
+#food-nutrients-title-name {
+    text-align: left;
+    flex-basis: calc(66.66% - 15px);
+    margin-left: 15px;
+}
+
+#food-nutrients-title-amount,
+#food-nutrients-title-daily-value {
+    text-align: left;
+    flex-basis: 16.66%;
+}
+
+.unknown {
+    font-size: smaller;
+    color: rgb(104, 104, 104);
+}
