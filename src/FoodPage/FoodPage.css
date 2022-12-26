@@ -103,6 +103,9 @@ h1 {
     #food-nutrients-table-title-container  {
         font-size: 14px;
     }
+    #portion-input {
+        font-size: 16px;
+    }
 }
 @media (min-width: 1100px) {
     #food-nutrients-table-title-container  {
