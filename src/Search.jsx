@@ -23,9 +23,9 @@ export default function Search({
         setSelectedFoodDetails({});
         //prevents previous foodListPage from temporarily loading before current foodListPage loads
         //  and doesn't fetch new data if user's current input is the same as that of the previous search 
-        if (currentInput != food) setFoodList([]);
-        if (foodIsSelected) setFoodIsSelected(!foodIsSelected);
+        setFoodList([]);
         fetchFoodList(food);
+        if (foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
     return (
