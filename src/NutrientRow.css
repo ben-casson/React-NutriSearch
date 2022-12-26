@@ -1,9 +1,0 @@
-.nutrient-row {
-    display: flex;
-    background-color: white;
-    padding: 10px 0;
-}
-
-.nutrient-row.dark-background {
-    background-color: #EBEEF8;
-}
