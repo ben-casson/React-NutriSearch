@@ -9,12 +9,12 @@ export default function FoodPage({
     setSelectedFoodDetails,
 }) {
     const [foodDetails, setFoodDetails] = useState({});
+    const [portionAmount, setPortionAmount] = useState(foodDetails.servingSize);
 
     const handleNumberChange = (e) => {
-        if (e.target.value.length > 4) {
-            e.target.value = Math.floor(e.target.value / 10);
-        }
-        console.log(e.target.value);
+        let input = e.target.value;
+        if (input.length > 4) e.target.value = Math.floor(input / 10);
+        setPortionAmount(input);
     };
 
     useEffect(() => {
@@ -36,14 +36,16 @@ export default function FoodPage({
                             type='number'
                             name='portion'
                             id='portion-input'
-                            defaultValue={100} //foodDetails.servingSize
+                            defaultValue={100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
                             min={0}
                             max={9999}
                             onChange={(e) => handleNumberChange(e)}
                         />
                         <p>{foodDetails.servingSizeUnit || 'g'}</p>
                     </div>
-                    <FoodNutrientSection foodDetails={foodDetails} />
+                    <FoodNutrientSection
+                        foodDetails={foodDetails} portionAmount={portionAmount}
+                    />
                 </main>
             )}
         </>
