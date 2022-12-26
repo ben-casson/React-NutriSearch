@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Search from './Search';
 import FoodListPage from './FoodListPage';
-import FoodPage from './FoodPage';
+import FoodPage from './FoodPage/FoodPage';
 
 function App() {
     const [food, setFood] = useState('');
@@ -71,14 +71,16 @@ function App() {
                 ) : (
                     <>
                         {foodList.length == 0 && <p id='loading'>Loading...</p>}
-                        {foodList.length != 0 && <FoodListPage
-                            food={food}
-                            foodIsSelected={foodIsSelected}
-                            setFoodIsSelected={setFoodIsSelected}
-                            foodList={foodList}
-                            setFoodList={setFoodList}
-                            fetchFood={fetchFood}
-                        />}
+                        {foodList.length != 0 && (
+                            <FoodListPage
+                                food={food}
+                                foodList={foodList}
+                                fetchFood={fetchFood}
+                                setFoodList={setFoodList}
+                                foodIsSelected={foodIsSelected}
+                                setFoodIsSelected={setFoodIsSelected}
+                            />
+                        )}
                     </>
                 )}
             </>
