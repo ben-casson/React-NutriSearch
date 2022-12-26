@@ -93,6 +93,7 @@ h1 {
     gap: 5px;
     margin-top: 30px;
     margin-bottom: 8px;
+    margin-right: 15px;
     color: var(--blue);
     font-weight: bold;
     font-size: 16px;
@@ -117,7 +118,7 @@ h1 {
 
 #food-nutrients-title-amount,
 #food-nutrients-title-daily-value {
-    text-align: left;
+    text-align: right;
     flex-basis: 16.66%;
 }
 
