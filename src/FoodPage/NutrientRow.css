@@ -1,0 +1,23 @@
+.nutrient-row {
+    display: flex;
+    gap: 5px;
+    background-color: white;
+    padding: 10px 0;
+    padding-right: 15px;
+}
+
+.nutrient-row.dark-background {
+    background-color: #EBEEF8;
+}
+
+.nutrient-name {
+    text-align: left;
+    flex-basis: calc(66.66% - 15px);
+    margin-left: 15px;
+}
+
+.nutrient-amount,
+.nutrient-dv {
+    text-align: right;
+    flex-basis: 16.66%;
+}
