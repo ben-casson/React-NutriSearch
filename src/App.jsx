@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import './App.css';
 import Search from './Search';
 import FoodListPage from './FoodListPage';
 import FoodPage from './FoodPage/FoodPage';
