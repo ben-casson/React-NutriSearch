@@ -10,14 +10,18 @@
     background-color: #EBEEF8;
 }
 
-.nutrient-name {
-    text-align: left;
-    flex-basis: calc(66.66% - 15px);
+.nutrient-title {
     margin-left: 15px;
 }
 
+.nutrient-name {
+    text-align: left;
+    flex-basis: calc(66.66% - 15px);
+    margin-left: 30px;
+}
+
 .nutrient-amount,
-.nutrient-dv {
+.nutrient-daily-value {
     text-align: right;
     flex-basis: 16.66%;
 }
