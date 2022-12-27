@@ -107,7 +107,7 @@ export default function FoodInfoSection({ foodDetails }) {
                                 foodDetails.inputFoods.length != 0 &&
                                 foodDetails.inputFoods[0]
                                     .ingredientDescription) || (
-                                <span className='unknown'>'unknown'</span>
+                                <span className='unknown'>unknown</span>
                             )}
                     </p>
                 </div>
