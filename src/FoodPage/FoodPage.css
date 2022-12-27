@@ -22,6 +22,7 @@ h1 {
 @media (max-width: 900px) {
     #food-info-section {
         flex-direction: column;
+        width: 100%;
     }
 
     #food-serving-size-container {
