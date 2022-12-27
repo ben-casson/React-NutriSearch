@@ -32,16 +32,18 @@ export default function FoodPage({
                         <label htmlFor='portion' id='portion-label'>
                             <b>Portion:</b>
                         </label>
-                        <input
-                            type='number'
-                            name='portion'
-                            id='portion-input'
-                            defaultValue={100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
-                            min={0}
-                            max={9999}
-                            onChange={(e) => handleNumberChange(e)}
-                        />
-                        <p>{foodDetails.servingSizeUnit || 'g'}</p>
+                        <div id='portion-input-container'>
+                            <input
+                                type='number'
+                                name='portion'
+                                id='portion-input'
+                                defaultValue={100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
+                                min={0}
+                                max={9999}
+                                onChange={(e) => handleNumberChange(e)}
+                            />
+                            <p>{foodDetails.servingSizeUnit || 'g'}</p>
+                        </div>
                     </div>
                     <FoodNutrientSection
                         foodDetails={foodDetails} portionAmount={portionAmount}
