@@ -10,9 +10,8 @@ export default function NutrientRow({
     const [nutrientsList, setNutrientsList] = useState([]);
     const [portionQuantity, setPortionQuantity] = useState(0);
     const [mockDV, setMockDV] = useState({
-        carbs: 15
-    })
-
+        carbs: 15,
+    });
 
     const createNutrientRow = (nutrientType) => {
         return (
@@ -20,18 +19,23 @@ export default function NutrientRow({
                 <p className='nutrient-name'>{nutrientType.nutrient.name}</p>
                 <p className='nutrient-amount'>
                     {(portionAmount
-                        ? Math.round(
-                              nutrientType.amount * portionQuantity * 10
-                          ) / 1000
+                        ? Math.round(nutrientType.amount * portionQuantity) /
+                          100
                         : nutrientType.amount) +
                         '' +
                         nutrientType.nutrient.unitName}
                 </p>
-                <p className='nutrient-dv'>{(portionAmount
-                        ? (Math.round(
-                              nutrientType.amount * portionQuantity * 10 / mockDV.carbs
-                          ) / 10) 
-                        : Math.round(nutrientType.amount / mockDV.carbs * 1000) / 10)}%</p>
+                <p className='nutrient-dv'>
+                    {portionAmount
+                        ? Math.round(
+                              (nutrientType.amount * portionQuantity * 10) /
+                                  mockDV.carbs
+                          ) / 10
+                        : Math.round(
+                              (nutrientType.amount / mockDV.carbs) * 1000
+                          ) / 10}
+                    %
+                </p>
             </>
         );
     };
