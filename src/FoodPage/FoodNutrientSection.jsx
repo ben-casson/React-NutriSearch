@@ -41,13 +41,19 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
             <div id='food-nutrients-table-content-container'>
                 <div className='nutrient-row'>
                     <p className='nutrient-title'>
-                        <b>General</b>
+                        General
                     </p>
                 </div>
                 {nutrientModel.size != 0 && createNutrientRow('Energy', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Water', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('Caffeine', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Alcohol', 'light')}
+                <div className='nutrient-row dark-background'>
+                    <p className='nutrient-title'>
+                        <b>Carbohydrates</b>
+                    </p>
+                </div>
+                {nutrientModel.size != 0 && createNutrientRow('Fiber', 'light')}
             </div>
         </section>
     );
