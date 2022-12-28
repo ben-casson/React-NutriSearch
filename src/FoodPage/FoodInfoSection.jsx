@@ -22,36 +22,23 @@ export default function FoodInfoSection({ foodDetails }) {
                         </p>
                     </div>
                     <div id='food-brand-name-container'>
-                        <p
-                            id='food-brand-name-title'
-                            className='food-info-title'
-                        >
+                        <p id='food-brand-name-title' className='food-info-title'>
                             Brand Name:
                         </p>
                         <p id='food-brand-name' className='food-info'>
-                            {foodDetails.brandName || (
-                                <span className='unknown'>unknown</span>
-                            )}
+                            {foodDetails.brandName || <span className='unknown'>unknown</span>}
                         </p>
                     </div>
                     <div id='food-brand-owner-container'>
-                        <p
-                            id='food-brand-owner-title'
-                            className='food-info-title'
-                        >
+                        <p id='food-brand-owner-title' className='food-info-title'>
                             Brand Owner:
                         </p>
                         <p id='food-brand-owner' className='food-info'>
-                            {foodDetails.brandOwner || (
-                                <span className='unknown'>unknown</span>
-                            )}
+                            {foodDetails.brandOwner || <span className='unknown'>unknown</span>}
                         </p>
                     </div>
                     <div id='food-serving-size-container'>
-                        <p
-                            id='food-serving-size-title'
-                            className='food-info-title'
-                        >
+                        <p id='food-serving-size-title' className='food-info-title'>
                             Serving Size:
                         </p>
                         <p id='food-serving-size' className='food-info'>
@@ -62,16 +49,13 @@ export default function FoodInfoSection({ foodDetails }) {
                                             return (
                                                 amount +
                                                 ' ' +
-                                                foodDetails.foodPortions[0]
-                                                    .modifier +
+                                                foodDetails.foodPortions[0].modifier +
                                                 ' (' +
-                                                foodDetails.foodPortions[0]
-                                                    .gramWeight +
+                                                foodDetails.foodPortions[0].gramWeight +
                                                 'g)'
                                             );
                                         } else {
-                                            foodDetails.foodPortions[0]
-                                                .portionDescription;
+                                            foodDetails.foodPortions[0].portionDescription;
                                         }
                                     })(foodDetails.foodPortions[0].amount)) ||
                                 (foodDetails.foodPortions &&
@@ -87,8 +71,7 @@ export default function FoodInfoSection({ foodDetails }) {
                                                 'g)'
                                             );
                                         } else {
-                                            return portions[0]
-                                                .portionDescription;
+                                            return portions[0].portionDescription;
                                         }
                                     })(foodDetails.foodPortions)) || (
                                     <span className='unknown'>unknown</span>
@@ -105,8 +88,7 @@ export default function FoodInfoSection({ foodDetails }) {
                         {foodDetails.ingredients ||
                             (foodDetails.inputFoods &&
                                 foodDetails.inputFoods.length != 0 &&
-                                foodDetails.inputFoods[0]
-                                    .ingredientDescription) || (
+                                foodDetails.inputFoods[0].ingredientDescription) || (
                                 <span className='unknown'>unknown</span>
                             )}
                     </p>
