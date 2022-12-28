@@ -49,14 +49,15 @@ main {
     height: auto;
     padding: 12px 0;
     border-top: 1px solid #7c7c7c; /* 115F94 */
+    background-color: var(--off-white);
 }
 
 .food-row.dark-background {
-    background-color: #EAEAEA;
+    background-color: #f0f0f0;  /* f0f0f0 EAEAEA */
 }
 
 .food-row:hover {
-    background-color: #cfcfcf;
+    background-color: #e7f1f8;  /* e7f1fa EBEEF8 EAEAEA cfcfcf */
 }
 
 .description-wrapper {
