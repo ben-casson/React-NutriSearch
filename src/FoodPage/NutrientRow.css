@@ -7,11 +7,13 @@
 }
 
 .nutrient-row.dark-background {
-    background-color: #EBEEF8;
+    background-color: #f4f6fd; /* FAFBFF EBEEF8 */
 }
 
 .nutrient-title {
     margin-left: 15px;
+    /* color: rgb(68, 68, 68); */
+    font-weight: bold;
 }
 
 .nutrient-name {
