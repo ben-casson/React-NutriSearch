@@ -13,8 +13,7 @@ export default function Search({
     fetchFoodList,
     setSelectedFoodDetails,
 }) {
-
-    const [currentInput, setCurrentInput] = useState('')
+    const [currentInput, setCurrentInput] = useState('');
 
     function handleFetchFood(e) {
         //prevents form from refreshing the page
@@ -22,7 +21,7 @@ export default function Search({
         //prevents previous FoodPage from temporarily loading before current FoodPage loads
         setSelectedFoodDetails({});
         //prevents previous foodListPage from temporarily loading before current foodListPage loads
-        //  and doesn't fetch new data if user's current input is the same as that of the previous search 
+        //  and doesn't fetch new data if user's current input is the same as that of the previous search
         setFoodList([]);
         fetchFoodList(food);
         if (foodIsSelected) setFoodIsSelected(!foodIsSelected);
