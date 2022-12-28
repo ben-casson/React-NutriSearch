@@ -22,7 +22,7 @@ export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelec
             {Object.keys(foodDetails).length === 0 ? (
                 <p>Loading...</p>
             ) : (
-                <main>
+                <main id='food-page'>
                     <FoodInfoSection foodDetails={foodDetails} />
                     <div id='portion-container'>
                         <label htmlFor='portion' id='portion-label'>
