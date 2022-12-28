@@ -11,13 +11,14 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
     const [nutrientModel, setNutrientModel] = useState(new Map());
     const [portionQuantity, setPortionQuantity] = useState(0);
 
-    function createNutrientRow(key, background) {
+    function createNutrientRow(key, background, nested = 'not nested') {
         return (
             <NutrientRow
                 background={background}
                 name={nutrientModel.get(`${key}`).type}
                 amount={calculateNutrientAmount(portionQuantity, nutrientModel, key)}
                 dailyValue={calculateNutrientDailyValue(portionQuantity, nutrientModel, key)}
+                nested={nested}
             />
         );
     }
@@ -53,7 +54,10 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
                         <b>Carbohydrates</b>
                     </p>
                 </div>
-                {nutrientModel.size != 0 && createNutrientRow('Fiber', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Carbs', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Sugars', 'dark', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Added Sugars', 'light', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Fiber', 'dark', 'nested')}
             </div>
         </section>
     );
