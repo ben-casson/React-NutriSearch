@@ -7,7 +7,6 @@
 h1 {
     text-align: left;
     color: var(--blue);
-    /* color: #1A936F; */
     font-size: 34px;
     margin-bottom: 15px;
 }
@@ -99,7 +98,9 @@ h1 {
 
 #food-nutrients-table-section {
     margin: 0 auto;
+    margin-top: 25px;
     /* max-width: 900px; */
+    /* border: 2px solid #E6E8F0; */
 }
 
 #food-nutrients-table-content-container {
@@ -110,13 +111,14 @@ h1 {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-top: 25px;
-    margin-bottom: 8px;
-    margin-right: 15px;
-    /* color: var(--blue); */
-    color: var(--black);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    color: var(--blue);
+    /* color: var(--black); */
     font-weight: bold;
     font-size: 16px;
+    /* background-color: #EBEEF8; */
 }
 
 @media (max-width: 500px) {
