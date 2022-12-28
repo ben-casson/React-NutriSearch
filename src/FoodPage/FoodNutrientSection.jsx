@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import NutrientRows from './NutrientRows';
 import NutrientRow from './NutrientRow';
-import { createNutrientModel } from '../helperFunctions';
+import { createNutrientsModel } from '../helperFunctions/createNutrientsModel';
+import {
+    calculateNutrientAmount,
+    calculateNutrientDailyValue,
+} from '../helperFunctions/calculateNutrientValues';
 import './NutrientRow.css';
 
 export default function FoodNutrientSection({ foodDetails, portionAmount }) {
@@ -13,36 +16,14 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
             <NutrientRow
                 background={background}
                 name={nutrientModel.get(`${key}`).type}
-                amount={
-                    (portionAmount
-                        ? Math.round(
-                              nutrientModel.get(`${key}`).amount *
-                                  portionQuantity
-                          ) / 100
-                        : nutrientModel.get(`${key}`).amount) +
-                    ' ' +
-                    nutrientModel.get(`${key}`).unit
-                }
-                dailyValue={
-                    (portionAmount
-                        ? Math.round(
-                              (nutrientModel.get(`${key}`).amount *
-                                  portionQuantity *
-                                  10) /
-                                  nutrientModel.get(`${key}`).dailyValue
-                          ) / 10
-                        : Math.round(
-                              (nutrientModel.get(`${key}`).amount /
-                                  nutrientModel.get(`${key}`).dailyValue) *
-                                  1000
-                          ) / 10) + '%'
-                }
+                amount={calculateNutrientAmount(portionQuantity, nutrientModel, key)}
+                dailyValue={calculateNutrientDailyValue(portionQuantity, nutrientModel, key)}
             />
         );
     }
 
     useEffect(() => {
-        let tempMap = createNutrientModel(foodDetails.foodNutrients);
+        let tempMap = createNutrientsModel(foodDetails.foodNutrients);
         setNutrientModel(tempMap);
     }, [foodDetails]);
 
@@ -63,15 +44,10 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
                         <b>General</b>
                     </p>
                 </div>
-                {/* <NutrientRow /> */}
                 {nutrientModel.size != 0 && createNutrientRow('Energy', 'dark')}
-                {Object.keys(foodDetails).length != 0 && (
-                    <NutrientRows
-                        nutrientsArray={foodDetails.foodNutrients}
-                        foodDetails={foodDetails}
-                        portionAmount={portionAmount}
-                    />
-                )}
+                {nutrientModel.size != 0 && createNutrientRow('Water', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Caffeine', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Alcohol', 'light')}
             </div>
         </section>
     );
