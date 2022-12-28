@@ -34,5 +34,6 @@ export function createNutrientsModel(nutrientArray) {
     createNutrientObject(nutrientArray, tempNutrientModel, 'Water', 'Water', 'g', 3500);
     createNutrientObject(nutrientArray, tempNutrientModel, 'Caffeine', 'Caffeine', 'mg', 0);
     createNutrientObject(nutrientArray, tempNutrientModel, 'Alcohol, ethyl', 'Alcohol', 'g', 0);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Fiber, total dietary', 'Fiber', 'g', 28);
     return tempNutrientModel;
 }
