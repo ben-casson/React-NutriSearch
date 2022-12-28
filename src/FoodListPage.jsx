@@ -1,14 +1,8 @@
 import { useEffect, useState } from 'react';
 import './FoodListPage.css';
 
-export default function FoodListPage({
-    food,
-    foodIsSelected,
-    setFoodIsSelected,
-    foodList,
-    fetchFood,
-}) {
-    const [arr, setArr] = useState([]);
+export default function FoodListPage({ foodIsSelected, setFoodIsSelected, foodList, fetchFood }) {
+    const [foodListArray, setFoodListArray] = useState([]);
 
     function loadFoodPage(id) {
         fetchFood(id);
@@ -37,12 +31,12 @@ export default function FoodListPage({
     };
 
     useEffect(() => {
-        if (foodList.length > 0) setArr([...foodList]);
+        if (foodList.length > 0) setFoodListArray([...foodList]);
     }, [foodList]);
 
     return (
         <main>
-            {arr.length != 0 && (
+            {foodListArray.length != 0 && (
                 <>
                     <div id='food-list-header'>
                         <div id='food-list-description-header'>
@@ -66,7 +60,7 @@ export default function FoodListPage({
                             </p>
                         </div>
                     </div>
-                    {arr.map((element, i) =>
+                    {foodListArray.map((element, i) =>
                         i % 2 == 0 ? (
                             <div className='food-row dark-background' key={i}>
                                 {createFoodRow(element, i)}
