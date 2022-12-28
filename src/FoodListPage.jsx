@@ -19,10 +19,7 @@ export default function FoodListPage({
         return (
             <>
                 <div className='description-wrapper'>
-                    <button
-                        key={element.fdcId}
-                        onClick={() => loadFoodPage(element.fdcId)}
-                    >
+                    <button key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>
                         {element.description}
                     </button>
                 </div>
