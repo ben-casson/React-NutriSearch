@@ -3,11 +3,7 @@ import './FoodPage.css';
 import FoodInfoSection from './FoodInfoSection';
 import FoodNutrientSection from './FoodNutrientSection';
 
-export default function FoodPage({
-    foodIsSelected,
-    selectedFoodDetails,
-    setSelectedFoodDetails,
-}) {
+export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelectedFoodDetails }) {
     const [foodDetails, setFoodDetails] = useState({});
     const [portionAmount, setPortionAmount] = useState(foodDetails.servingSize);
 
@@ -45,9 +41,7 @@ export default function FoodPage({
                             <p>{foodDetails.servingSizeUnit || 'g'}</p>
                         </div>
                     </div>
-                    <FoodNutrientSection
-                        foodDetails={foodDetails} portionAmount={portionAmount}
-                    />
+                    <FoodNutrientSection foodDetails={foodDetails} portionAmount={portionAmount} />
                 </main>
             )}
         </>
