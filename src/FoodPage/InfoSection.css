@@ -1,0 +1,50 @@
+#food-info-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px; /* 25px */
+    /* margin-left: 15px; */
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    #food-info-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #food-serving-size-container {
+        margin-bottom: 10px;
+    }
+}
+
+#food-info-container {
+    flex-basis: 50%;
+}
+
+.food-info {
+    text-align: left;
+    overflow-wrap: normal;
+}
+
+#food-category-container,
+#food-brand-name-container,
+#food-brand-owner-container,
+#food-serving-size-container,
+#food-ingredients-container{
+    display: flex;
+    gap: 5px;
+    text-align: left;
+}
+
+#food-category-container,
+#food-brand-name-container,
+#food-brand-owner-container,
+#food-serving-size-container,
+#food-ingredients-container {
+    margin-bottom: 5px;
+}
+
+.food-info-title {
+    width: fit-content;
+    font-weight: bold;
+}
