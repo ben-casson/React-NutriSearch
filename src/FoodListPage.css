@@ -1,6 +1,5 @@
 main {
     margin: 30px 0px 40px 0px;
-    /* border-bottom: 1px solid #115F94; */
     font-size: 16px;
 }
 
@@ -28,7 +27,7 @@ main {
 }
 
 #food-list-description-header {
-    flex-basis: 40%;     /* 66.66% */
+    flex-basis: 40%;     
     display: flex;
     justify-content: flex-start;
 }
@@ -50,10 +49,6 @@ main {
         flex-basis: 25%;
     }
 
-}
-
-#food-list-category-header {
-    /* margin-right: 15px; */
 }
 
 .food-row {
