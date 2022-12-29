@@ -74,11 +74,26 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
                 {nutrientModel.size != 0 && createNutrientRow('B2 (Riboflavin)', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('B3 (Niacin)', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('B5 (Pantothenic Acid)', 'dark')}
-                {nutrientModel.size != 0 && createNutrientRow('B6 (Pyridoxine)', 'light')} 
+                {nutrientModel.size != 0 && createNutrientRow('B6 (Pyridoxine)', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('B12 (Cobalamin)', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Folate', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('Vitamin A', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Vitamin C', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Vitamin D', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Vitamin E', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Vitamin K', 'dark')}
+                <div className='nutrient-row'>
+                    <p className='nutrient-title'>Minerals</p>
+                </div>
+                {nutrientModel.size != 0 && createNutrientRow('Calcium', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Copper', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Iron', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Magnesium', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Phosphorus', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Potassium', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Selenium', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Sodium', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Zinc', 'dark')}
             </div>
         </section>
     );
