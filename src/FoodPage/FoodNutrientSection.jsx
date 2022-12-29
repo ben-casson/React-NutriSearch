@@ -41,23 +41,44 @@ export default function FoodNutrientSection({ foodDetails, portionAmount }) {
             </div>
             <div id='food-nutrients-table-content-container'>
                 <div className='nutrient-row'>
-                    <p className='nutrient-title'>
-                        General
-                    </p>
+                    <p className='nutrient-title'>General</p>
                 </div>
                 {nutrientModel.size != 0 && createNutrientRow('Energy', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Water', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('Caffeine', 'dark')}
                 {nutrientModel.size != 0 && createNutrientRow('Alcohol', 'light')}
                 <div className='nutrient-row dark-background'>
-                    <p className='nutrient-title'>
-                        <b>Carbohydrates</b>
-                    </p>
+                    <p className='nutrient-title'>Carbohydrates</p>
                 </div>
                 {nutrientModel.size != 0 && createNutrientRow('Carbs', 'light')}
                 {nutrientModel.size != 0 && createNutrientRow('Sugars', 'dark', 'nested')}
                 {nutrientModel.size != 0 && createNutrientRow('Added Sugars', 'light', 'nested')}
                 {nutrientModel.size != 0 && createNutrientRow('Fiber', 'dark', 'nested')}
+                <div className='nutrient-row'>
+                    <p className='nutrient-title'>Lipids</p>
+                </div>
+                {nutrientModel.size != 0 && createNutrientRow('Fat', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Monounsaturated', 'light', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Polyunsaturated', 'dark', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Saturated', 'light', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Trans-Fats', 'dark', 'nested')}
+                {nutrientModel.size != 0 && createNutrientRow('Cholesterol', 'light')}
+                <div className='nutrient-row dark-background'>
+                    <p className='nutrient-title'>Protein</p>
+                </div>
+                {nutrientModel.size != 0 && createNutrientRow('Protein', 'light')}
+                <div className='nutrient-row dark-background'>
+                    <p className='nutrient-title'>Vitamins</p>
+                </div>
+                {nutrientModel.size != 0 && createNutrientRow('B1 (Thiamin)', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('B2 (Riboflavin)', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('B3 (Niacin)', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('B5 (Pantothenic Acid)', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('B6 (Pyridoxine)', 'light')} 
+                {nutrientModel.size != 0 && createNutrientRow('B12 (Cobalamin)', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Folate', 'light')}
+                {nutrientModel.size != 0 && createNutrientRow('Vitamin A', 'dark')}
+                {nutrientModel.size != 0 && createNutrientRow('Vitamin C', 'light')}
             </div>
         </section>
     );
