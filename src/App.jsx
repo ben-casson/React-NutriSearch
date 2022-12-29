@@ -69,7 +69,7 @@ function App() {
                     />
                 ) : (
                     <>
-                        {foodList.length == 0 && <p id='loading'>Loading...</p>}
+                        {foodList.length == 0 && <p className='loading'>Loading...</p>}
                         {foodList.length != 0 && (
                             <FoodListPage
                                 food={food}
