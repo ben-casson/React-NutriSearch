@@ -5,7 +5,7 @@ export function calculateNutrientAmount(portionQuantity, nutrientModel, key) {
 
     let unit = nutrientModel.get(`${key}`).unit;
 
-    return (amount >= 0 ? amount : '-') + ' ' + unit;
+    return (amount >= 0 ? amount + ' ' + unit : '-');
 }
 
 export function calculateNutrientDailyValue(portionQuantity, nutrientModel, key) {
