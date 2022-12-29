@@ -59,5 +59,19 @@ export function createNutrientsModel(nutrientArray) {
     createNutrientObject(nutrientArray, tempNutrientModel, 'Folate, total', 'Folate', 'µg', 400);
     createNutrientObject(nutrientArray, tempNutrientModel, 'Vitamin A, RAE', 'Vitamin A', 'µg', 800);
     createNutrientObject(nutrientArray, tempNutrientModel, 'Vitamin C, total ascorbic acid', 'Vitamin C', 'mg', 90);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Vitamin D (D2 + D3)', 'Vitamin D', 'µg', 15);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Vitamin E (alpha-tocopherol)', 'Vitamin E', 'mg', 15);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Vitamin K (phylloquinone)', 'Vitamin K', 'µg', 120);
+    //Minerals
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Calcium, Ca', 'Calcium', 'mg', 1000);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Copper, Cu', 'Copper', 'mg', 900);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Iron, Fe', 'Iron', 'mg', 14);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Magnesium, Mg', 'Magnesium', 'mg', 390);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Phosphorus, P', 'Phosphorus', 'mg', 4000);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Potassium, K', 'Potassium', 'mg', 1800);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Selenium, Se', 'Selenium', 'µg', 55);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Sodium, Na', 'Sodium', 'mg', 2300);
+    createNutrientObject(nutrientArray, tempNutrientModel, 'Zinc, Zn', 'Zinc', 'mg', 11);
+
     return tempNutrientModel;
 }
