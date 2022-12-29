@@ -7,8 +7,10 @@
 #food-page {
     background-color: white;
     box-shadow: 0px 0px 2px 1px rgb(207, 207, 207);
-    padding: 20px;
-    margin-top: 40px;
+    padding: 30px;
+    /* margin-top: 40px; */
+    margin: 40px auto;
+    max-width: 800px;
 }
 @media (max-width: 500px) {
     #food-page {
@@ -17,7 +19,7 @@
 }
 @media (min-width: 1100px) {
     #food-page {
-        padding: 30px;
+        padding: 60px; /* 30 */
     }
 }
 
@@ -26,7 +28,7 @@ h1 {
     color: var(--blue);
     font-size: 34px;
     margin-bottom: 15px;
-    margin-top: 10px;
+    margin-top: -5px;
 }
 @media (max-width: 500px) {
     h1 {
@@ -44,7 +46,7 @@ h1 {
     flex-direction: column;
     margin-bottom: 50px; /* 25px */
     /* margin-left: 15px; */
-    width: 70%;
+    width: 100%;
 }
 
 @media (max-width: 900px) {
