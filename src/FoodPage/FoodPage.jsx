@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './FoodPage.css';
-import FoodInfoSection from './FoodInfoSection';
-import FoodNutrientSection from './FoodNutrientSection';
+import InfoSection from './InfoSection';
+import NutrientSection from './NutrientSection';
 
 export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelectedFoodDetails }) {
     const [foodDetails, setFoodDetails] = useState({});
@@ -10,7 +10,7 @@ export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelec
     const handleNumberChange = (e) => {
         let input = e.target.value;
         if (input.length > 4) e.target.value = Math.floor(input / 10);
-        setPortionAmount(input);
+        setPortionAmount(e.target.value);
     };
 
     useEffect(() => {
@@ -20,10 +20,11 @@ export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelec
     return (
         <>
             {Object.keys(foodDetails).length === 0 ? (
-                <p>Loading...</p>
+                <p className='loading'>Loading...</p>
             ) : (
                 <main id='food-page'>
-                    <FoodInfoSection foodDetails={foodDetails} />
+                    <h1>{foodDetails.description}</h1>
+                    <InfoSection foodDetails={foodDetails} />
                     <div id='portion-container'>
                         <label htmlFor='portion' id='portion-label'>
                             <b>Portion:</b>
@@ -41,7 +42,7 @@ export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelec
                             <p>{foodDetails.servingSizeUnit || 'g'}</p>
                         </div>
                     </div>
-                    <FoodNutrientSection foodDetails={foodDetails} portionAmount={portionAmount} />
+                    <NutrientSection foodDetails={foodDetails} portionAmount={portionAmount} />
                 </main>
             )}
         </>
