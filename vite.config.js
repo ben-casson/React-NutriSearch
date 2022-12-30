@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   //uncomment base for deploy
-  base: "/food-nutrition-search/",
+  base: "/React-NutriSearch/",
 })

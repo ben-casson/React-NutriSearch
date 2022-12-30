@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ben-casson.github.io/food-nutrition-search/",
+  "homepage": "https://ben-casson.github.io/React-NutriSearch/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
