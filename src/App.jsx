@@ -50,39 +50,37 @@ function App() {
 
     return (
         <>
-            <>
-                <Search
-                    food={food}
-                    setFood={setFood}
-                    foodList={foodList}
-                    setFoodList={setFoodList}
-                    fetchFoodList={fetchFoodList}
+            <Search
+                food={food}
+                setFood={setFood}
+                foodList={foodList}
+                setFoodList={setFoodList}
+                fetchFoodList={fetchFoodList}
+                foodIsSelected={foodIsSelected}
+                setFoodIsSelected={setFoodIsSelected}
+                setSelectedFoodDetails={setSelectedFoodDetails}
+            />
+            {foodIsSelected ? (
+                <FoodPage
                     foodIsSelected={foodIsSelected}
-                    setFoodIsSelected={setFoodIsSelected}
+                    selectedFoodDetails={selectedFoodDetails}
                     setSelectedFoodDetails={setSelectedFoodDetails}
                 />
-                {foodIsSelected ? (
-                    <FoodPage
-                        foodIsSelected={foodIsSelected}
-                        selectedFoodDetails={selectedFoodDetails}
-                        setSelectedFoodDetails={setSelectedFoodDetails}
-                    />
-                ) : (
-                    <>
-                        {foodList.length == 0 && <p className='loading'>Loading...</p>}
-                        {foodList.length != 0 && (
-                            <FoodListPage
-                                food={food}
-                                foodList={foodList}
-                                fetchFood={fetchFood}
-                                setFoodList={setFoodList}
-                                foodIsSelected={foodIsSelected}
-                                setFoodIsSelected={setFoodIsSelected}
-                            />
-                        )}
-                    </>
-                )}
-            </>
+            ) : (
+                <>
+                    {foodList.length == 0 && <p className='loading'>Loading...</p>}
+                    {foodList.length != 0 && (
+                        <FoodListPage
+                            food={food}
+                            foodList={foodList}
+                            fetchFood={fetchFood}
+                            setFoodList={setFoodList}
+                            foodIsSelected={foodIsSelected}
+                            setFoodIsSelected={setFoodIsSelected}
+                        />
+                    )}
+                </>
+            )}
         </>
     );
 }
