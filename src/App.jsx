@@ -14,8 +14,9 @@ function App() {
         if (tempFoodInput.trim() === '') {
             tempFoodInput = 'apple';
         }
+        //fetch using express proxy server to avoid leaking API key in client
         fetch(
-            `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9&query=${tempFoodInput}`
+            `https://nutrisearch-api-proxy-server.onrender.com/food-list?query=${tempFoodInput}`
         )
             .then((response) => response.json())
             .then((foodResults) => {
@@ -29,8 +30,9 @@ function App() {
     }
 
     function fetchFood(id) {
+        //fetch using express proxy server to avoid leaking API key in client
         fetch(
-            `https://api.nal.usda.gov/fdc/v1/food/${id}?api_key=lWLhwUp3ZfGng76exaxb8ddTvr5SlfSs9G8wk3b9`
+            `https://nutrisearch-api-proxy-server.onrender.com/food-item/${id}`
         )
             .then((response) => response.json())
             .then((foodResults) => {
