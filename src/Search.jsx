@@ -16,7 +16,7 @@ export default function Search({
         setSelectedFoodDetails({});
         //prevents previous foodListPage from temporarily loading before current foodListPage loads
         setFoodList([]);
-        fetchFoodList(food);
+        fetchFoodList(food, setFoodList);
         if (foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
@@ -35,7 +35,7 @@ export default function Search({
                                 setFood(e.target.value);
                             }}
                         />
-                        <button id='search-btn' aria-label="Search"></button>
+                        <button id='search-btn' aria-label='Search'></button>
                     </div>
                 </form>
             </div>
