@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
 import './FoodListPage.css';
+import { fetchFood } from './helperFunctions/fetch';
 
-export default function FoodListPage({ foodIsSelected, setFoodIsSelected, foodList, fetchFood }) {
+export default function FoodListPage({
+    foodIsSelected,
+    setFoodIsSelected,
+    foodList,
+    setSelectedFoodDetails,
+}) {
     const [foodListArray, setFoodListArray] = useState([]);
 
     function loadFoodPage(id) {
-        fetchFood(id);
+        fetchFood(id, setSelectedFoodDetails);
         if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
