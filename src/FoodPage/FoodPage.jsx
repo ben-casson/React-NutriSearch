@@ -3,7 +3,7 @@ import './FoodPage.css';
 import InfoSection from './InfoSection';
 import NutrientSection from './NutrientSection';
 
-export default function FoodPage({ foodIsSelected, selectedFoodDetails, setSelectedFoodDetails }) {
+export default function FoodPage({ selectedFoodDetails }) {
     const [foodDetails, setFoodDetails] = useState({});
     const [portionAmount, setPortionAmount] = useState(foodDetails.servingSize);
 
