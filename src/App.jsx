@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Search from './Search';
-import FoodListPage from './FoodListPage';
+import Search from './Search/Search';
+import FoodListPage from './FoodListPage/FoodListPage';
 import FoodPage from './FoodPage/FoodPage';
 import { fetchFoodList } from './helperFunctions/fetch';
 
