@@ -11,5 +11,5 @@ export default function ThemeButton() {
         }
     }
 
-    return <button id='theme-button' className='light' onClick={toggleTheme}></button>;
+    return <button id='theme-button' className='dark' onClick={toggleTheme}></button>;
 }
