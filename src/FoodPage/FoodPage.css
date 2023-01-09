@@ -46,22 +46,27 @@
 }
 
 #portion-container {
+    box-sizing: border-box;
     display: flex;
     justify-content: left;
     align-items: center;
+    height: 35px;
 }
 
 #portion-input-container {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: end;
     background-color: var(--background2);
     border: 1px solid var(--text);
     padding: 5px 7px 5px 10px;
-    width: 65px;
+    width: 80px; /* 65 */
 }
 #portion-input-container:hover {
-    border: 1px solid var(--accent);
+    border: 2px solid var(--accent);
+    padding: 5px 7px 5px 10px;
+    width: 81px;
 }
 
 #portion-label {
@@ -71,12 +76,13 @@
 }
 
 #portion-input {
+    box-sizing: border-box;
     appearance: textfield;
     color: var(--text);
     background-color: var(--background2);
     text-align: end;
     font-size: 16px;
-    width: 50px;
+    width: 56px;
     height: 100%;
     border: none;
 }
