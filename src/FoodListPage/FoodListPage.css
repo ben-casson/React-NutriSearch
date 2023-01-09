@@ -11,6 +11,13 @@ main#food-list-main {
         width: 1200px;
     }
 }
+@media (max-width: 450px) {
+    main#food-list-main {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100vw;
+    }
+}
 
 #food-list-header {
     display: flex;
