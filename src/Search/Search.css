@@ -22,8 +22,9 @@ form {
 }
 
 #food-input {
+    box-sizing: border-box;
     flex-grow: 1;
-    max-height: 44px;
+    height: 44px;
     background-color: var(--accent2);
     border: 1px solid var(--accent3);
     color: var(--text);
@@ -35,21 +36,15 @@ form {
     -webkit-appearance: none;
 }
 #food-input:focus {
-    /* border: 1px solid #aedfff;  053c61 */
     background-color: var(--background2);
     outline: 0;
 }
 #food-input:hover {
     background-color: var(--background2);
 }
-/* @media (max-width: 500px) {
-    #food-input {
-        font-size: 14px;
-    }
-} */
 
 #search-btn {
-    background-image: url('./src/assets/search.png');
+    background-image: url('../assets/search.png');
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--accent3);
