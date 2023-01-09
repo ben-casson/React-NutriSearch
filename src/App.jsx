@@ -30,7 +30,7 @@ function App() {
                 <FoodPage selectedFoodDetails={selectedFoodDetails} />
             ) : (
                 <>
-                    {foodList.length == 0 && <p className='loading'>Loading...</p>}
+                    {foodList.length == 0 && <p className='loader'></p>}
                     {foodList.length != 0 && (
                         <FoodListPage
                             foodList={foodList}

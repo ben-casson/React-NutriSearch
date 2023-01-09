@@ -20,7 +20,7 @@ export default function FoodPage({ selectedFoodDetails }) {
     return (
         <>
             {Object.keys(foodDetails).length === 0 ? (
-                <p className='loading'>Loading...</p>
+                <p className='loader'></p>
             ) : (
                 <main id='food-page'>
                     <h1>{foodDetails.description}</h1>
