@@ -1,6 +1,15 @@
-main {
-    margin: 30px 0px 40px 0px;
+main#food-list-main {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 60px 0px 40px 0px;
     font-size: 16px;
+    width: calc(100vw - 40px);
+    color: var(--text);
+}
+@media (min-width: 1200px) {
+    main#food-list-main {
+        width: 1200px;
+    }
 }
 
 #food-list-header {
@@ -27,7 +36,7 @@ main {
 }
 
 #food-list-description-header {
-    flex-basis: 40%;     
+    flex-basis: 40%;
     display: flex;
     justify-content: flex-start;
 }
@@ -48,7 +57,6 @@ main {
     #food-list-category-header {
         flex-basis: 25%;
     }
-
 }
 
 .food-row {
@@ -57,15 +65,15 @@ main {
     height: auto;
     padding: 12px 15px;
     border-top: 1px solid #7c7c7c; /* 115F94 */
-    background-color: var(--off-white);
+    background-color: var(--background);
 }
 
 .food-row.dark-background {
-    background-color: #f0f0f0;  /* f0f0f0 EAEAEA */
+    background-color: var(--background3); /* f0f0f0 EAEAEA */
 }
 
 .food-row:hover {
-    background-color: #e7f1f8;  /* e7f1f8 e7f1fa EBEEF8 EAEAEA cfcfcf */
+    background-color: var(--hover); /* e7f1f8 e7f1fa EBEEF8 EAEAEA cfcfcf */
 }
 
 .description-wrapper {
@@ -94,7 +102,6 @@ main {
     .food-brand-owner-wrapper {
         flex-basis: 25%;
     }
-
 }
 
 button {
@@ -104,7 +111,7 @@ button {
     cursor: pointer;
     font-size: 18px;
     font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: underline;
 }
 @media (max-width: 500px) {
