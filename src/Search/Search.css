@@ -30,6 +30,7 @@ form {
     color: var(--text);
     font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
+    margin: 0;
     padding-left: 10px;
     border-radius: 0;
     appearance: none;
