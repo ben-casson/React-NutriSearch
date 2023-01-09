@@ -1,7 +1,7 @@
 export function fetchFoodList(foodItem, setState) {
     let tempFoodInput = foodItem + '';
     if (tempFoodInput.trim() === '') {
-        tempFoodInput = 'apple';
+        tempFoodInput = 'blueberries';
     }
     //fetch using express proxy server to avoid leaking API key in client
     fetch(`https://nutrisearch-api-proxy-server.onrender.com/food-list?query=${tempFoodInput}`)
