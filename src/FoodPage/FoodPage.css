@@ -151,5 +151,5 @@
 
 .unknown {
     font-size: smaller;
-    color: rgb(104, 104, 104);
+    color: var(--unknown);
 }
