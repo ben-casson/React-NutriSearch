@@ -60,6 +60,9 @@
     padding: 5px 7px 5px 10px;
     width: 65px;
 }
+#portion-input-container:hover {
+    border: 1px solid var(--accent);
+}
 
 #portion-label {
     font-size: 18px;
