@@ -6,7 +6,7 @@ import { fetchFoodList } from './helperFunctions/fetch';
 import ThemeButton from './ThemeButton/ThemeButton';
 
 function App() {
-    const [food, setFood] = useState('apple');
+    const [food, setFood] = useState('blueberries');
     const [foodList, setFoodList] = useState([]);
     const [foodIsSelected, setFoodIsSelected] = useState(false);
     const [selectedFoodDetails, setSelectedFoodDetails] = useState({});
