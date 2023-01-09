@@ -44,6 +44,7 @@ form {
 }
 
 #search-btn {
+    box-sizing: border-box;
     background-image: url('../assets/search.png');
     background-repeat: no-repeat;
     background-position: center;
