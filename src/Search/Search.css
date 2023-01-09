@@ -55,3 +55,15 @@ form {
     border: 0;
     cursor: pointer;
 }
+
+@media (max-width: 500px) {
+    #search-bar-and-btn-container,
+    #food-input,
+    #search-btn {
+        height: 35px;
+    }
+    #search-btn {
+        background-size: 18px;
+        width: 35px;
+    }
+}
