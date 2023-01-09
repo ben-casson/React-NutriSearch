@@ -3,9 +3,10 @@ import Search from './Search/Search';
 import FoodListPage from './FoodListPage/FoodListPage';
 import FoodPage from './FoodPage/FoodPage';
 import { fetchFoodList } from './helperFunctions/fetch';
+import ThemeButton from './ThemeButton/ThemeButton';
 
 function App() {
-    const [food, setFood] = useState('');
+    const [food, setFood] = useState('apple');
     const [foodList, setFoodList] = useState([]);
     const [foodIsSelected, setFoodIsSelected] = useState(false);
     const [selectedFoodDetails, setSelectedFoodDetails] = useState({});
@@ -17,20 +18,35 @@ function App() {
 
     return (
         <>
-            <Search
-                food={food}
-                setFood={setFood}
-                setFoodList={setFoodList}
-                fetchFoodList={fetchFoodList}
-                foodIsSelected={foodIsSelected}
-                setFoodIsSelected={setFoodIsSelected}
-                setSelectedFoodDetails={setSelectedFoodDetails}
-            />
+            <header>
+                <div id='header-content'>
+                    <div id='page-title-container'>
+                        <div id='site-icon'></div>
+                        <h1 id='page-title'>NutriSearch</h1>
+                    </div>
+                    <Search
+                        food={food}
+                        setFood={setFood}
+                        setFoodList={setFoodList}
+                        fetchFoodList={fetchFoodList}
+                        foodIsSelected={foodIsSelected}
+                        setFoodIsSelected={setFoodIsSelected}
+                        setSelectedFoodDetails={setSelectedFoodDetails}
+                    />
+                    <div id='theme-button-container'>
+                        <ThemeButton />
+                    </div>
+                </div>
+            </header>
             {foodIsSelected ? (
                 <FoodPage selectedFoodDetails={selectedFoodDetails} />
             ) : (
                 <>
-                    {foodList.length == 0 && <p className='loader'></p>}
+                    {foodList.length == 0 && (
+                        <div className='loader-wrapper'>
+                            <p className='loader'></p>
+                        </div>
+                    )}
                     {foodList.length != 0 && (
                         <FoodListPage
                             foodList={foodList}
