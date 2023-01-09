@@ -41,7 +41,7 @@ export default function FoodListPage({
     }, [foodList]);
 
     return (
-        <main>
+        <main id='food-list-main'>
             {foodListArray.length != 0 && (
                 <>
                     <div id='food-list-header'>
