@@ -1,3 +1,15 @@
+/* main {
+    width: 1200px;
+    max-width: 1400px;
+} */
+/* main {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 40px 0px;
+    font-size: 16px;
+    align-self: center;
+    max-width: 100vw;
+} */
 @media (max-width: 1100px) {
     main {
         padding: 0 10px;
@@ -5,39 +17,43 @@
 }
 
 #food-page {
-    background-color: white;
-    box-shadow: 0px 0px 2px 1px rgb(207, 207, 207);
+    background-color: var(--background2);
+    color: var(--text);
+    box-shadow: 0px 0px 2px 1px var(--shadow);
     padding: 30px;
     /* margin-top: 40px; */
-    margin: 40px auto;
-    max-width: 800px;
+    margin: 40px 0;
+    width: calc(100vw - 60px);
 }
 @media (max-width: 500px) {
     #food-page {
+        width: calc(100vw - 20px);
         padding: 30px 10px;
-        margin-bottom: 0;
+        margin: 0;
+        box-shadow: none;
     }
 }
 @media (min-width: 1100px) {
     #food-page {
         padding: 60px; /* 30 */
+        width: 800px;
     }
 }
 
-h1 {
+#food-description {
     text-align: left;
-    color: var(--blue);
+    color: var(--accent);
     font-size: 34px;
     margin-bottom: 15px;
     margin-top: -5px;
 }
 @media (max-width: 500px) {
-    h1 {
+    #food-description {
         font-size: 28px;
     }
 }
 @media (min-width: 1100px) {
-    h1 {
+    #food-description {
         font-size: 38px;
     }
 }
@@ -53,8 +69,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: end;
-    background-color: white;
-    border: 1px solid var(--black);
+    background-color: var(--background2);
+    border: 1px solid var(--text);
     padding: 5px 7px 5px 10px;
     width: 65px;
 }
@@ -62,13 +78,15 @@ h1 {
 #portion-label {
     font-size: 18px;
     /* color: var(--blue); */
-    color: var(--black);
+    color: var(--text);
     margin-right: 5px;
     /* color: #1A936F; */
 }
 
 #portion-input {
     appearance: textfield;
+    color: var(--text);
+    background-color: var(--background2);
     text-align: end;
     font-size: 16px;
     width: 50px;
@@ -88,7 +106,7 @@ h1 {
 }
 
 #food-nutrients-table-content-container {
-    border: 2px solid #E6E8F0;
+    border: 2px solid var(--shadow);
 }
 
 #food-nutrients-table-title-container {
@@ -99,7 +117,7 @@ h1 {
     padding-bottom: 10px;
     padding-right: 17px;
     padding-left: 17px;
-    color: var(--blue);
+    color: var(--accent);
     /* color: var(--black); */
     /* color: #094a75;  094a75 5a6694 */
     font-weight: bold;
