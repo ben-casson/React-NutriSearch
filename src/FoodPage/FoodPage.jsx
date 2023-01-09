@@ -20,10 +20,10 @@ export default function FoodPage({ selectedFoodDetails }) {
     return (
         <>
             {Object.keys(foodDetails).length === 0 ? (
-                <p className='loader'></p>
+                <div className='loader-wrapper'><p className='loader'></p></div>
             ) : (
                 <main id='food-page'>
-                    <h1>{foodDetails.description}</h1>
+                    <h1 id='food-description'>{foodDetails.description}</h1>
                     <InfoSection foodDetails={foodDetails} />
                     <div id='portion-container'>
                         <label htmlFor='portion' id='portion-label'>
