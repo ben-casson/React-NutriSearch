@@ -18,3 +18,9 @@
 #theme-button.dark {
     background-image: url('../assets/dark-mode.png');
 }
+
+@media (max-width: 700px) {
+    #theme-button {
+        margin-left: -5px;
+    }
+}
