@@ -1,12 +1,13 @@
 .nutrient-row {
     display: flex;
     gap: 5px;
-    background-color: #f9faff; /* f8f9ff */
+    background-color: var(--row); /* f8f9ff */
     padding: 10px 0;
     padding-right: 15px;
+    color: var(--text);
 }
 .nutrient-row.dark-background {
-    background-color: #edf1fc; /* f4f6fd FAFBFF EBEEF8 */
+    background-color: var(--row2); /* f4f6fd FAFBFF EBEEF8 */
 }
 
 
