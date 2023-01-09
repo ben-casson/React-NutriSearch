@@ -4,6 +4,7 @@ import FoodListPage from './FoodListPage/FoodListPage';
 import FoodPage from './FoodPage/FoodPage';
 import { fetchFoodList } from './helperFunctions/fetch';
 import ThemeButton from './ThemeButton/ThemeButton';
+import './header.css'
 
 function App() {
     const [food, setFood] = useState('blueberries');
