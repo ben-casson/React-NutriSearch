@@ -5,9 +5,11 @@ export default function ThemeButton() {
         if (document.body.className === 'dark') {
             document.body.className = 'light';
             document.querySelector('#theme-button').className = 'dark';
+            document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", "white");
         } else {
             document.body.className = 'dark';
             document.querySelector('#theme-button').className = 'light';
+            document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", `"#111827"`);
         }
     }
 
