@@ -122,7 +122,8 @@ button {
     text-decoration: underline;
 }
 @media (max-width: 500px) {
-    button {
+    button,
+    .food-row {
         font-size: 14px;
     }
 }
