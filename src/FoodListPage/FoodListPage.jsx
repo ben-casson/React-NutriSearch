@@ -11,6 +11,8 @@ export default function FoodListPage({
     const [foodListArray, setFoodListArray] = useState([]);
 
     function loadFoodPage(id) {
+        //prevent previous food page from being displayed temporarily
+        setSelectedFoodDetails({});
         fetchFood(id, setSelectedFoodDetails);
         if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
