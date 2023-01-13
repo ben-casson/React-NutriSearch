@@ -22,18 +22,18 @@ export default function FoodListPage({
         return (
             <>
                 <div className='description-wrapper'>
-                    <button key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>
+                    <button className='food-button food-row-element' key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>
                         {element.description}
                     </button>
                 </div>
                 <div className='food-brand-wrapper'>
-                    <p>{element.brandName || element.foodClass || '-'}</p>
+                    <p className='food-row-element'>{element.brandName || element.foodClass || '-'}</p>
                 </div>
                 <div className='food-brand-owner-wrapper'>
-                    <p>{element.brandOwner || '-'}</p>
+                    <p className='food-row-element'>{element.brandOwner || '-'}</p>
                 </div>
                 <div className='food-category-wrapper'>
-                    <p>{element.foodCategory}</p>
+                    <p className='food-row-element'>{element.foodCategory}</p>
                 </div>
             </>
         );
