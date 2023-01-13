@@ -15,6 +15,7 @@ main#food-list-main {
     main#food-list-main {
         padding-right: 0;
         padding-left: 0;
+        margin-top: 40px;
         width: 100vw;
     }
 }
@@ -68,7 +69,7 @@ main#food-list-main {
 
 .food-row {
     display: flex;
-    gap: 5px;
+    gap: 8px;
     height: auto;
     padding: 12px 15px;
     border-top: 1px solid #7c7c7c; /* 115F94 */
