@@ -20,6 +20,7 @@ body.dark {
   --background2: #111827;
   --background3: #1b2330;
   --hover: #243147;
+  --hover2: #293547;
   --shadow: rgb(71, 71, 71);
   --row: #192230;
   --row2: #1c2635;
@@ -34,6 +35,7 @@ body.light {
   --background2: #fff;
   --background3: #f0f0f0;
   --hover: #e7f1f8;
+  --hover2: #ebebeb;
   --shadow: rgb(207, 207, 207);
   --row: #f9faff;
   --row2: #edf1fc;
