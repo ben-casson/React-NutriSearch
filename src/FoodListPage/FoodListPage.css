@@ -71,7 +71,7 @@ main#food-list-main {
     display: flex;
     gap: 8px;
     height: auto;
-    padding: 12px 15px;
+    padding: 0px 15px;
     border-top: 1px solid #7c7c7c; /* 115F94 */
     background-color: var(--background);
 }
@@ -110,6 +110,15 @@ main#food-list-main {
     .food-brand-owner-wrapper {
         flex-basis: 25%;
     }
+}
+
+.food-row-element {
+    box-sizing: border-box;
+    padding: 12px 0;
+}
+
+.food-button {
+    height: 100%;
 }
 
 button {
