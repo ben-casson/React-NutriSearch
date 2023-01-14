@@ -10,11 +10,13 @@ export default function FoodListPage({
 }) {
     const [foodListArray, setFoodListArray] = useState([]);
 
-    function loadFoodPage(id) {
+    function loadFoodPage(element) {
         window.scrollTo(0,0);
         //prevent previous food page from being displayed temporarily
         setSelectedFoodDetails({});
-        fetchFood(id, setSelectedFoodDetails);
+        // fetchFood(id, setSelectedFoodDetails);
+        console.log(element)
+        setSelectedFoodDetails(element)
         if (!foodIsSelected) setFoodIsSelected(!foodIsSelected);
     }
 
@@ -22,7 +24,7 @@ export default function FoodListPage({
         return (
             <>
                 <div className='description-wrapper'>
-                    <button className='food-button food-row-element' key={element.fdcId} onClick={() => loadFoodPage(element.fdcId)}>
+                    <button className='food-button food-row-element' key={element.fdcId} onClick={() => loadFoodPage(element)}>
                         {element.description}
                     </button>
                 </div>
