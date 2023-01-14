@@ -5,7 +5,7 @@ import NutrientSection from './NutrientSection';
 
 export default function FoodPage({ selectedFoodDetails, setFoodIsSelected }) {
     const [foodDetails, setFoodDetails] = useState({});
-    const [portionAmount, setPortionAmount] = useState(foodDetails.servingSize);
+    const [portionAmount, setPortionAmount] = useState(selectedFoodDetails.servingSize);
 
     const handleNumberChange = (e) => {
         let input = e.target.value;
@@ -46,7 +46,7 @@ export default function FoodPage({ selectedFoodDetails, setFoodIsSelected }) {
                                     type='number'
                                     name='portion'
                                     id='portion-input'
-                                    defaultValue={100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
+                                    defaultValue={foodDetails.servingSize || 100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
                                     min={0}
                                     max={9999}
                                     onChange={(e) => handleNumberChange(e)}
