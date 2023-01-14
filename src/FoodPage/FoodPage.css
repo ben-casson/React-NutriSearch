@@ -61,12 +61,12 @@
     background-color: var(--background2);
     border: 1px solid var(--text);
     padding: 5px 7px 5px 10px;
-    width: 80px; /* 65 */
+    width: 86px; /* 65 */
 }
 #portion-input-container:hover {
     border: 2px solid var(--accent);
     padding: 5px 7px 5px 10px;
-    width: 81px;
+    width: 87px;
 }
 
 #portion-label {
