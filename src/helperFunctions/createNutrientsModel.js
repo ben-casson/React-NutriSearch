@@ -9,11 +9,11 @@ function createNutrientObject(
     const tempNutrientObj = {};
     for (let nutrientObj of nutrientArray) {
         if (
-            nutrientObj.nutrient.name == nutrientNameFromAPI &&
-            nutrientObj.nutrient.unitName == unit
+            nutrientObj.nutrientName == nutrientNameFromAPI &&
+            nutrientObj.unitName.toLowerCase() == unit
         ) {
             tempNutrientObj.type = type;
-            tempNutrientObj.amount = nutrientObj.amount;
+            tempNutrientObj.amount = nutrientObj.value;
             tempNutrientObj.dailyValue = dailyValue;
             tempNutrientObj.unit = unit;
             break;
