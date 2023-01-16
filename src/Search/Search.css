@@ -29,7 +29,7 @@ form {
 
 #search-bar-and-btn-container {
     display: flex;
-    height: 44px;
+    height: 38px;
 }
 
 #food-input-label {
@@ -39,8 +39,8 @@ form {
 #food-input {
     box-sizing: border-box;
     flex-grow: 1;
-    height: 44px;
-    background-color: var(--accent2);
+    height: 38px; /* 44 */
+    background-color: var(--background2);
     border: 1px solid var(--accent3);
     color: var(--text);
     font-family: 'Source Sans Pro', Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -52,12 +52,14 @@ form {
     -webkit-appearance: none;
 }
 #food-input:focus {
-    background-color: var(--background2);
+    background-color: var(--accent2);
+    border: 2px solid var(--accent3);
     outline: 0;
+    padding-left: 9px;
 }
-#food-input:hover {
+/* #food-input:hover {
     background-color: var(--background2);
-}
+} */
 
 #search-btn {
     box-sizing: border-box;
@@ -65,8 +67,9 @@ form {
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--accent3);
-    width: 45px;
-    height: 44px;
+    background-size: 20px;
+    width: 38px;
+    height: 38px;
     padding: 0;
     margin: 0;
     border: 0;
