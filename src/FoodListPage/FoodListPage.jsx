@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FoodListPage.css';
-import { fetchFood } from '../helperFunctions/fetch';
 
 export default function FoodListPage({
     foodIsSelected,
