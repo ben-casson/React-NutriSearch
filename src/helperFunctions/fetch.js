@@ -4,7 +4,9 @@ export function fetchFoodList(foodItem, setState) {
         tempFoodInput = 'blueberries';
     }
     //fetch using express proxy server to avoid leaking API key in client
-    fetch(`https://nutrisearch-api-proxy-server.onrender.com/food-list?query=${tempFoodInput}`)
+    fetch(
+        `https://nutrisearch-api-proxy-server.onrender.com/food-list?query=${tempFoodInput}&pageSize=100`
+    )
         .then((response) => {
             if (!response.ok) {
                 switch (response.status) {
@@ -26,40 +28,25 @@ export function fetchFoodList(foodItem, setState) {
         })
         .then((foodResults) => {
             console.log(foodResults.foods);
-            setState([...foodResults.foods]);
+            let updatedFoodArray = removeDuplicateFoods(foodResults.foods);
+            setState([...updatedFoodArray]);
         })
         .catch((error) => {
             console.error(`An error occurred: ${error}`);
         });
 }
 
-export function fetchFood(id, setState) {
-    //fetch using express proxy server to avoid leaking API key in client
-    fetch(`https://nutrisearch-api-proxy-server.onrender.com/food-item/${id}`)
-        .then((response) => {
-            if (!response.ok) {
-                switch (response.status) {
-                    case 400:
-                        console.log('400 Bad Request');
-                        break;
-                    case 401:
-                        console.log('401 Unauthorized');
-                        break;
-                    case 404:
-                        console.log('404 Not Found');
-                        break;
-                    case 500:
-                        console.log('500 Internal Server Error');
-                        break;
-                }
+function removeDuplicateFoods(array) {
+    for (let i = 0; i < array.length - 1; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (
+                array[i].description === array[j].description &&
+                array[i].brandName === array[j].brandName &&
+                array[i].brandOwner === array[j].brandOwner
+            ) {
+                array[j] = array.pop();
             }
-            return response.json();
-        })
-        .then((foodResults) => {
-            console.log(foodResults);
-            setState(foodResults);
-        })
-        .catch((error) => {
-            console.error(`An error occurred: ${error}`);
-        });
+        }
+    }
+    return array;
 }
