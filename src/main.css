@@ -13,7 +13,7 @@
 
 body.dark {
   --accent: #98a2fd; /* 818CF8 */
-  --accent2: #192238;
+  --accent2: #203057;
   --accent3: #6366F1;
   --text: #DFDFDF; /* EFEFEF */
   --background: #1F2937;
@@ -28,7 +28,7 @@ body.dark {
 }
 body.light {
   --accent: #0071bc;
-  --accent2: #f2f9fd;
+  --accent2: #e8f7ff;
   --accent3: #0071bc;
   --text: #131313;
   --background: #f7f7f7;
@@ -87,16 +87,3 @@ p {
         transform: rotate(360deg);
     }
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}  */
