@@ -7,12 +7,6 @@ export default function FoodPage({ selectedFoodDetails, setFoodIsSelected }) {
     const [foodDetails, setFoodDetails] = useState({});
     const [portionAmount, setPortionAmount] = useState(selectedFoodDetails.servingSize);
 
-    const handleNumberChange = (e) => {
-        let input = e.target.value;
-        if (input.length > 4) e.target.value = Math.floor(input / 10);
-        setPortionAmount(e.target.value);
-    };
-
     const returnToFoodList = () => {
         setFoodIsSelected(false);
     };
@@ -35,9 +29,11 @@ export default function FoodPage({ selectedFoodDetails, setFoodIsSelected }) {
                         </button>
                     </div>
                     <main id='food-page'>
-                        <h1 id='food-description'>{foodDetails.description}</h1>
-                        <InfoSection foodDetails={foodDetails} />
-                        <div id='portion-container'>
+                        <div id='food-info-section-container'>
+                            <h1 id='food-description'>{foodDetails.description}</h1>
+                            <InfoSection foodDetails={foodDetails} setPortionAmount={setPortionAmount} />
+                        </div>
+                        {/* <div id='portion-container'>
                             <label htmlFor='portion' id='portion-label'>
                                 <b>Portion:</b>
                             </label>
@@ -46,14 +42,14 @@ export default function FoodPage({ selectedFoodDetails, setFoodIsSelected }) {
                                     type='number'
                                     name='portion'
                                     id='portion-input'
-                                    defaultValue={foodDetails.servingSize || 100} //foodDetails.servingSize || foodDetails.foodPortions[0].gramWeight
+                                    defaultValue={foodDetails.servingSize || 100}
                                     min={0}
                                     max={9999}
                                     onChange={(e) => handleNumberChange(e)}
                                 />
                                 <p>{foodDetails.servingSizeUnit || 'g'}</p>
                             </div>
-                        </div>
+                        </div> */}
                         <NutrientSection foodDetails={foodDetails} portionAmount={portionAmount} />
                     </main>
                 </>

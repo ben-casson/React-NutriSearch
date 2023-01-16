@@ -1,6 +1,12 @@
 import './InfoSection.css';
 
-export default function InfoSection({ foodDetails }) {
+export default function InfoSection({ foodDetails, setPortionAmount }) {
+    const handleNumberChange = (e) => {
+        let input = e.target.value;
+        if (input.length > 4) e.target.value = Math.floor(input / 10);
+        setPortionAmount(e.target.value);
+    };
+
     return (
         <section id='food-info-section'>
             <div id='food-info-container'>
@@ -80,6 +86,23 @@ export default function InfoSection({ foodDetails }) {
                     </p>
                 </div>
             </div>
+            <div id='portion-container'>
+                            <label htmlFor='portion' id='portion-label'>
+                                <b>Portion:</b>
+                            </label>
+                            <div id='portion-input-container'>
+                                <input
+                                    type='number'
+                                    name='portion'
+                                    id='portion-input'
+                                    defaultValue={foodDetails.servingSize || 100}
+                                    min={0}
+                                    max={9999}
+                                    onChange={(e) => handleNumberChange(e)}
+                                />
+                                <p>{foodDetails.servingSizeUnit || 'g'}</p>
+                            </div>
+                        </div>
             <div id='food-ingredients-container'>
                 <p id='food-ingredients-title' className='food-info-title'>
                     Ingredients:
