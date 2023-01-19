@@ -134,7 +134,7 @@
 #food-nutrients-title-amount,
 #food-nutrients-title-daily-value {
     text-align: right;
-    flex-basis: 16.66%;
+    flex-basis: 25%;
 }
 
 #food-nutrients-title-amount {
@@ -143,8 +143,12 @@
 
 @media (max-width: 500px) {
     #food-nutrients-title-amount {
-        flex-basis: 30%;
-        margin-right: 7px;
+        flex-basis: 28%;
+        margin-right: 5px;
+    }
+
+    #food-nutrients-title-daily-value {
+        flex-basis: 16.66%;
     }
 }
 
